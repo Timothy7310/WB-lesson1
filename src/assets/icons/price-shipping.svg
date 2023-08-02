@@ -1,0 +1,18 @@
+<svg id="price-shipping" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M1 11c0 5.523 4.477 10 10 10s10-4.477 10-10S16.523 1 11 1 1 5.477 1 11Zm18.182 0a8.182 8.182 0 1 1-16.364 0 8.182 8.182 0 0 1 16.364 0Z"
+        fill="url(#shippingGrad1)" />
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M6.983 9.655a1 1 0 0 1 1.41.108l2.236 2.609 4.054-4.791a1 1 0 0 1 1.526 1.292l-4.433 5.239a1.5 1.5 0 0 1-2.284.007l-2.618-3.054a1 1 0 0 1 .109-1.41Z"
+        fill="url(#shippingGrad2)" />
+    <defs>
+        <linearGradient id="shippingGrad1" x1="4" y1="2" x2="11" y2="21" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0CD38B" />
+            <stop offset="1" stop-color="#0CB477" />
+        </linearGradient>
+        <linearGradient id="shippingGrad2" x1="9" y1="7.5" x2="10.509" y2="15.859" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0CD38B" />
+            <stop offset="1" stop-color="#0CB477" />
+        </linearGradient>
+    </defs>
+</svg>
