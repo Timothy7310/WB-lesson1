@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--bg-secondary);
+  padding: 24px 0px;
+  text-align: center;
+  &__info {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(var(--color-white--rgb), 0.7);
+  }
+}
