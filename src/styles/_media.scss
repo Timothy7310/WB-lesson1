@@ -16,7 +16,8 @@
   .header {
     padding: 14px 0px;
     &__wrap {
-      grid-template-columns: 23px 1fr 25px;
+      grid-template-columns: 23px max-content 25px;
+      justify-content: space-between;
       gap: 16px;
       align-items: center;
       position: relative;
