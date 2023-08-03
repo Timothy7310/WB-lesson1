@@ -16,7 +16,68 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="container">Header</div>
+        <div class="container">
+          <div class="header__wrap">
+            <button class="header__burger">
+              <span class="header__burger-line"></span>
+              <span class="header__burger-line"></span>
+              <span class="header__burger-line"></span>
+            </button>
+            <a href="#" class="header__logo">
+              <h1 class="header__logo-title">
+                товары <br class="header__logo--br" />
+                и <span class="header__logo-title--span">точка</span>
+              </h1>
+            </a>
+            <form action="" class="header__search">
+              <input
+                class="header__search-input"
+                type="text"
+                placeholder="Я ищу..."
+              />
+              <input type="submit" hidden />
+              <button
+                class="header__search-button"
+                type="submit"
+                aria-label="Поиск"
+              >
+                <svg class="header__search-button-icon">
+                  <use href="src/assets/icons/sprite.svg#search"></use>
+                </svg>
+              </button>
+              <button
+                class="header__search-button header__search-button--open"
+                type="button"
+                aria-label="Открыть поиск"
+              >
+                <svg class="header__search-button-icon">
+                  <use href="src/assets/icons/sprite.svg#search"></use>
+                </svg>
+              </button>
+            </form>
+            <nav class="header__navigation">
+              <ul class="header__navigation-list">
+                <li class="header__navigation-item">
+                  <a href="#" class="header__navigation-link">
+                    <svg class="header__navigation-link-icon">
+                      <use href="src/assets/icons/sprite.svg#profile"></use>
+                    </svg>
+                    <span class="header__navigation-link-text">Профиль</span>
+                  </a>
+                </li>
+                <li class="header__navigation-item">
+                  <a href="#" class="header__navigation-link">
+                    <svg class="header__navigation-link-icon">
+                      <use href="src/assets/icons/sprite.svg#basket"></use>
+                    </svg>
+                    <span class="header__navigation-link-text">Корзина</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header__overlay"></div>
       </header>
       <main class="main">
         <div class="container">Main</div>

@@ -15,7 +15,7 @@ html {
 body {
   overflow-anchor: none;
   overflow-x: hidden;
-  font-family: Segoe-UI, Tahoma, Microsoft Sans Serif sans-serif;
+  font-family: Segoe-UI, sans-serif;
   scroll-behavior: smooth;
   background-color: var(--bg-main);
   color: var(--color-dark);
@@ -49,7 +49,7 @@ ul {
 
 .container {
   max-width: 1504px;
-  padding: 0 32px;
+  padding: 0 24px;
   margin: 0 auto;
   width: 100%;
 }
