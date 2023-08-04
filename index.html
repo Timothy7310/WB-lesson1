@@ -12,8 +12,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Товары и точка</title>
-    <script type="module" crossorigin src="./assets/index-e004dce8.js"></script>
-    <link rel="stylesheet" href="./assets/index-97777e2e.css">
+    <script type="module" crossorigin src="./assets/index-55d56b10.js"></script>
+    <link rel="stylesheet" href="./assets/index-974652ae.css">
   </head>
   <body>
     <div class="wrapper">
@@ -82,13 +82,161 @@
         <div class="header__overlay"></div>
       </header>
       <main class="main">
-        <div class="container">Main</div>
+        <div class="container container__main">
+          <div class="main__wrap">
+            <section class="payment main__card">
+              <h2 class="payment__title main__card-title">Способ оплаты</h2>
+              <button class="payment__change" id="change-payment-button">
+                Изменить
+              </button>
+              <div class="payment__info">
+                <div class="payment__info-type">
+                  <img
+                    class="payment__info-type-icon"
+                    id="payment-card-type"
+                    src="mir.svg"
+                    alt="Мир"
+                  />
+                </div>
+                <div class="payment__info-card">
+                  <span
+                    class="payment__info-card-number payment__info-card-value"
+                    id="payment-card-number"
+                  >
+                    1234 56•• •••• 1234
+                  </span>
+                  <span
+                    class="payment__info-card-date payment__info-card-value"
+                    id="payment-card-date"
+                  >
+                    01/30
+                  </span>
+                </div>
+              </div>
+              <span class="payment__text">
+                Спишем оплату с карты при получении
+              </span>
+            </section>
+          </div>
+        </div>
       </main>
       <footer class="footer">
         <div class="container">
           <span class="footer__info">© 2022 ООО «Товары и точка»</span>
         </div>
       </footer>
+    </div>
+    <!-- TODO: проверить чтобы на на устройствах с маленькой высотой можно было все заполнить и закрыть попап -->
+    <div class="payment-popup" id="payment-popup">
+      <div class="payment-popup__overlay" id="payment-popup-overlay"></div>
+      <div class="payment-popup__content">
+        <h2 class="payment-popup__content-title">Способ оплаты</h2>
+        <button
+          class="payment-popup__content-close"
+          id="payment-popup-close"
+          aria-label="Закрыть"
+        >
+          <svg class="payment-popup__content-close-icon">
+            <use href="./assets/sprite-c30b7c8d.svg#close-form"></use>
+          </svg>
+        </button>
+        <form class="payment-popup__form" id="payment-form" action="">
+          <ul class="payment-popup__form-list">
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="1234 56•• •••• 1234"
+                  data-card-type="Мир"
+                  data-card-icon="mir.svg"
+                  data-card-month="01"
+                  data-card-year="30"
+                  checked
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="mir.svg"
+                    class="payment-popup__type-icon"
+                    alt="Мир"
+                  />
+                </div>
+                <span class="payment-popup__number">1234 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="4444 56•• •••• 1234"
+                  data-card-type="Visa"
+                  data-card-icon="visa.svg"
+                  data-card-month="03"
+                  data-card-year="28"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="visa.svg"
+                    class="payment-popup__type-icon"
+                    alt="Visa"
+                  />
+                </div>
+                <span class="payment-popup__number">4444 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="3333 56•• •••• 1234"
+                  data-card-type="Mastercard"
+                  data-card-icon="mastercard.svg"
+                  data-card-month="05"
+                  data-card-year="27"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="mastercard.svg"
+                    class="payment-popup__type-icon"
+                    alt="Mastercard"
+                  />
+                </div>
+                <span class="payment-popup__number">3333 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="2222 56•• •••• 1234"
+                  data-card-type="Maestro"
+                  data-card-icon="maestro.svg"
+                  data-card-month="06"
+                  data-card-year="32"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="maestro.svg"
+                    class="payment-popup__type-icon"
+                    alt="Maestro"
+                  />
+                </div>
+                <span class="payment-popup__number">2222 56•• •••• 1234</span>
+              </label>
+            </li>
+          </ul>
+          <button class="payment-popup__content-choose" type="submit">
+            Выбрать
+          </button>
+        </form>
+      </div>
     </div>
     
   </body>
