@@ -84,23 +84,28 @@
           <div class="main__wrap">
             <section class="payment main__card">
               <h2 class="payment__title main__card-title">Способ оплаты</h2>
-              <button class="payment__change">Изменить</button>
+              <button class="payment__change" id="change-payment-button">
+                Изменить
+              </button>
               <div class="payment__info">
                 <div class="payment__info-type">
                   <img
                     class="payment__info-type-icon"
+                    id="payment-card-type"
                     src="src/assets/icons/mir.svg"
-                    alt="Mir"
+                    alt="Мир"
                   />
                 </div>
                 <div class="payment__info-card">
                   <span
                     class="payment__info-card-number payment__info-card-value"
+                    id="payment-card-number"
                   >
                     1234 56•• •••• 1234
                   </span>
                   <span
                     class="payment__info-card-date payment__info-card-value"
+                    id="payment-card-date"
                   >
                     01/30
                   </span>
@@ -119,67 +124,116 @@
         </div>
       </footer>
     </div>
-    <div class="payment-popup">
-      <div class="payment-popup__overlay"></div>
+    <!-- TODO: проверить чтобы на на устройствах с маленькой высотой можно было все заполнить и закрыть попап -->
+    <div class="payment-popup" id="payment-popup">
+      <div class="payment-popup__overlay" id="payment-popup-overlay"></div>
       <div class="payment-popup__content">
         <h2 class="payment-popup__content-title">Способ оплаты</h2>
-        <button class="payment-popup__content-close" aria-label="Закрыть">
+        <button
+          class="payment-popup__content-close"
+          id="payment-popup-close"
+          aria-label="Закрыть"
+        >
           <svg class="payment-popup__content-close-icon">
             <use href="src/assets/icons/sprite.svg#close-form"></use>
           </svg>
         </button>
-        <form class="payment-popup__form" action="">
-          <label class="payment-popup__label">
-            <input
-              class="payment-popup__radio"
-              name="card"
-              type="radio"
-              checked
-            />
-            <div class="payment-popup__type">
-              <img
-                src="src/assets/icons/mir.svg"
-                class="payment-popup__type-icon"
-                alt="Mir"
-              />
-            </div>
-            <span class="payment-popup__number">1234 56•• •••• 1234</span>
-          </label>
-          <label class="payment-popup__label">
-            <input class="payment-popup__radio" name="card" type="radio" />
-            <div class="payment-popup__type">
-              <img
-                src="src/assets/icons/visa.svg"
-                class="payment-popup__type-icon"
-                alt="Visa"
-              />
-            </div>
-            <span class="payment-popup__number">4444 56•• •••• 1234</span>
-          </label>
-          <label class="payment-popup__label">
-            <input class="payment-popup__radio" name="card" type="radio" />
-            <div class="payment-popup__type">
-              <img
-                src="src/assets/icons/mastercard.svg"
-                class="payment-popup__type-icon"
-                alt="Mastercard"
-              />
-            </div>
-            <span class="payment-popup__number">3333 56•• •••• 1234</span>
-          </label>
-          <label class="payment-popup__label">
-            <input class="payment-popup__radio" name="card" type="radio" />
-            <div class="payment-popup__type">
-              <img
-                src="src/assets/icons/maestro.svg"
-                class="payment-popup__type-icon"
-                alt="Maestro"
-              />
-            </div>
-            <span class="payment-popup__number">2222 56•• •••• 1234</span>
-          </label>
+        <form class="payment-popup__form" id="payment-form" action="">
+          <ul class="payment-popup__form-list">
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="1234 56•• •••• 1234"
+                  data-card-type="Мир"
+                  data-card-icon="src/assets/icons/mir.svg"
+                  data-card-month="01"
+                  data-card-year="30"
+                  checked
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="src/assets/icons/mir.svg"
+                    class="payment-popup__type-icon"
+                    alt="Мир"
+                  />
+                </div>
+                <span class="payment-popup__number">1234 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="4444 56•• •••• 1234"
+                  data-card-type="Visa"
+                  data-card-icon="src/assets/icons/visa.svg"
+                  data-card-month="03"
+                  data-card-year="28"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="src/assets/icons/visa.svg"
+                    class="payment-popup__type-icon"
+                    alt="Visa"
+                  />
+                </div>
+                <span class="payment-popup__number">4444 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="3333 56•• •••• 1234"
+                  data-card-type="Mastercard"
+                  data-card-icon="src/assets/icons/mastercard.svg"
+                  data-card-month="05"
+                  data-card-year="27"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="src/assets/icons/mastercard.svg"
+                    class="payment-popup__type-icon"
+                    alt="Mastercard"
+                  />
+                </div>
+                <span class="payment-popup__number">3333 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="2222 56•• •••• 1234"
+                  data-card-type="Maestro"
+                  data-card-icon="src/assets/icons/maestro.svg"
+                  data-card-month="06"
+                  data-card-year="32"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="src/assets/icons/maestro.svg"
+                    class="payment-popup__type-icon"
+                    alt="Maestro"
+                  />
+                </div>
+                <span class="payment-popup__number">2222 56•• •••• 1234</span>
+              </label>
+            </li>
+          </ul>
+          <button class="payment-popup__content-choose" type="submit">
+            Выбрать
+          </button>
         </form>
-        <button class="payment-popup__content-choose">Выбрать</button>
       </div>
     </div>
     <script type="module" src="src/main.js"></script>
