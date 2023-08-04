@@ -80,7 +80,59 @@
         <div class="header__overlay"></div>
       </header>
       <main class="main">
-        <div class="container">Main</div>
+        <div class="container container__main">
+          <div class="main__wrap">
+            <section class="payment main__card">
+              <h2 class="payment__title main__card-title">Способ оплаты</h2>
+              <button class="payment__change">Изменить</button>
+              <div class="payment__info">
+                <div class="payment__info-card-type-wrap">
+                  <img
+                    class="payment__info-card-type"
+                    src="src/assets//icons/mir.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TODO: Указать примерный номер карты в placeholder или текст 'Номер карты'-->
+                <input
+                  class="payment__info-card-number payment__input"
+                  type="tel"
+                  name="card-number"
+                  inputmode="numeric"
+                  pattern="[0-9]{13,19}"
+                  maxlength="19"
+                  placeholder="2222 22•• •••• 2222"
+                />
+                <div class="payment__info-date">
+                  <!-- TODO: Указать примерне даты в placeholder или текст 'мм' / 'гг'-->
+                  <input
+                    class="payment__info-card-date payment__input"
+                    type="tel"
+                    pattern="[0-9]{1,2}"
+                    maxlength="2"
+                    max="12"
+                    name="card-month"
+                    id="card-month"
+                    placeholder="01"
+                  />
+                  <input
+                    class="payment__info-card-date payment__input"
+                    type="tel"
+                    pattern="[0-9]{1,2}"
+                    maxlength="2"
+                    max="99"
+                    name="card-year"
+                    id="card-year"
+                    placeholder="30"
+                  />
+                </div>
+              </div>
+              <span class="payment__text"
+                >Спишем оплату с карты при получении</span
+              >
+            </section>
+          </div>
+        </div>
       </main>
       <footer class="footer">
         <div class="container">
