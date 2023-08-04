@@ -1,7 +1,7 @@
 import "./index.scss";
 
-import { searchFormHandler } from "./js/searchForm/searchFormHandler";
+import { handleSearchForm } from "./js/searchForm/handleSearchForm";
 import { handlePaymentForm } from "./js/paymentForm/handlePaymentForm";
 
-searchFormHandler();
+handleSearchForm();
 handlePaymentForm();
