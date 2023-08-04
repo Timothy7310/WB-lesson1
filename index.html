@@ -86,50 +86,29 @@
               <h2 class="payment__title main__card-title">Способ оплаты</h2>
               <button class="payment__change">Изменить</button>
               <div class="payment__info">
-                <div class="payment__info-card-type-wrap">
+                <div class="payment__info-type">
                   <img
-                    class="payment__info-card-type"
-                    src="src/assets//icons/mir.svg"
-                    alt=""
+                    class="payment__info-type-icon"
+                    src="src/assets/icons/mir.svg"
+                    alt="Mir"
                   />
                 </div>
-                <!-- TODO: Указать примерный номер карты в placeholder или текст 'Номер карты'-->
-                <input
-                  class="payment__info-card-number payment__input"
-                  type="tel"
-                  name="card-number"
-                  inputmode="numeric"
-                  pattern="[0-9]{13,19}"
-                  maxlength="19"
-                  placeholder="2222 22•• •••• 2222"
-                />
-                <div class="payment__info-date">
-                  <!-- TODO: Указать примерне даты в placeholder или текст 'мм' / 'гг'-->
-                  <input
-                    class="payment__info-card-date payment__input"
-                    type="tel"
-                    pattern="[0-9]{1,2}"
-                    maxlength="2"
-                    max="12"
-                    name="card-month"
-                    id="card-month"
-                    placeholder="01"
-                  />
-                  <input
-                    class="payment__info-card-date payment__input"
-                    type="tel"
-                    pattern="[0-9]{1,2}"
-                    maxlength="2"
-                    max="99"
-                    name="card-year"
-                    id="card-year"
-                    placeholder="30"
-                  />
+                <div class="payment__info-card">
+                  <span
+                    class="payment__info-card-number payment__info-card-value"
+                  >
+                    1234 56•• •••• 1234
+                  </span>
+                  <span
+                    class="payment__info-card-date payment__info-card-value"
+                  >
+                    01/30
+                  </span>
                 </div>
               </div>
-              <span class="payment__text"
-                >Спишем оплату с карты при получении</span
-              >
+              <span class="payment__text">
+                Спишем оплату с карты при получении
+              </span>
             </section>
           </div>
         </div>
@@ -139,6 +118,69 @@
           <span class="footer__info">© 2022 ООО «Товары и точка»</span>
         </div>
       </footer>
+    </div>
+    <div class="payment-popup">
+      <div class="payment-popup__overlay"></div>
+      <div class="payment-popup__content">
+        <h2 class="payment-popup__content-title">Способ оплаты</h2>
+        <button class="payment-popup__content-close" aria-label="Закрыть">
+          <svg class="payment-popup__content-close-icon">
+            <use href="src/assets/icons/sprite.svg#close-form"></use>
+          </svg>
+        </button>
+        <form class="payment-popup__form" action="">
+          <label class="payment-popup__label">
+            <input
+              class="payment-popup__radio"
+              name="card"
+              type="radio"
+              checked
+            />
+            <div class="payment-popup__type">
+              <img
+                src="src/assets/icons/mir.svg"
+                class="payment-popup__type-icon"
+                alt="Mir"
+              />
+            </div>
+            <span class="payment-popup__number">1234 56•• •••• 1234</span>
+          </label>
+          <label class="payment-popup__label">
+            <input class="payment-popup__radio" name="card" type="radio" />
+            <div class="payment-popup__type">
+              <img
+                src="src/assets/icons/visa.svg"
+                class="payment-popup__type-icon"
+                alt="Visa"
+              />
+            </div>
+            <span class="payment-popup__number">4444 56•• •••• 1234</span>
+          </label>
+          <label class="payment-popup__label">
+            <input class="payment-popup__radio" name="card" type="radio" />
+            <div class="payment-popup__type">
+              <img
+                src="src/assets/icons/mastercard.svg"
+                class="payment-popup__type-icon"
+                alt="Mastercard"
+              />
+            </div>
+            <span class="payment-popup__number">3333 56•• •••• 1234</span>
+          </label>
+          <label class="payment-popup__label">
+            <input class="payment-popup__radio" name="card" type="radio" />
+            <div class="payment-popup__type">
+              <img
+                src="src/assets/icons/maestro.svg"
+                class="payment-popup__type-icon"
+                alt="Maestro"
+              />
+            </div>
+            <span class="payment-popup__number">2222 56•• •••• 1234</span>
+          </label>
+        </form>
+        <button class="payment-popup__content-choose">Выбрать</button>
+      </div>
     </div>
     <script type="module" src="src/main.js"></script>
   </body>
