@@ -8,10 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-#root {
-  width: 100%;
-}
-
 body {
   overflow-anchor: none;
   overflow-x: hidden;
@@ -19,6 +15,10 @@ body {
   scroll-behavior: smooth;
   background-color: var(--bg-main);
   color: var(--color-dark);
+}
+
+body.lock {
+  overflow: hidden;
 }
 
 img {

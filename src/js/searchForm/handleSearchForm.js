@@ -1,7 +1,7 @@
 import { openSearchForm } from "./openSearchForm";
 import { closeSearchForm } from "./closeSearchForm";
 
-export const searchFormHandler = () => {
+export const handleSearchForm = () => {
   const searchForm = document.querySelector(".header__search");
   const searchInput = document.querySelector(".header__search-input");
   const headerOverlay = document.querySelector(".header__overlay");
