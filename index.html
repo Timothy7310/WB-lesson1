@@ -82,6 +82,290 @@
       <main class="main">
         <div class="container container__main">
           <div class="main__wrap">
+            <section class="basket">
+              <h2 class="basket__title container__main-title">Корзина</h2>
+              <div class="basket-current">
+                <div class="basket-current__top">
+                  <label class="basket__checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="basket-item"
+                      class="basket__checkbox"
+                      id="basket-checkbox-all"
+                    />
+                    Выбрать все
+                  </label>
+                  <button
+                    class="basket__accordion-button basket__accordion-button--open"
+                  >
+                    <svg class="basket__accordion-button-icon">
+                      <use href="src/assets/icons/sprite.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul class="basket__list basket__list--current">
+                  <li class="basket__item">
+                    <label class="basket__checkbox-label">
+                      <input
+                        name="basket-item"
+                        type="checkbox"
+                        class="basket__checkbox"
+                      />
+                    </label>
+                    <picture class="basket__item-img-wrap">
+                      <img
+                        class="basket__item-img"
+                        src="src/assets/images/shirt@1x.jpg"
+                        alt=""
+                      />
+                    </picture>
+
+                    <div class="basket__item-text-wrap">
+                      <a href="#">
+                        <h3 class="basket__item-title">
+                          Футболка UZcotton мужская
+                        </h3>
+                      </a>
+                      <div class="basket__item-subinfo">
+                        <span class="basket__item-subinfo-text">
+                          Цвет: белый
+                        </span>
+                        <span class="basket__item-subinfo-text">
+                          Размер: 56
+                        </span>
+                      </div>
+                      <span class="basket__item-store">Коледино WB</span>
+                      <div class="basket__item-company">
+                        <span class="basket__item-company-name">
+                          OOO Вайлдберриз
+                        </span>
+                        <button
+                          class="basket__item-company-button"
+                          id="company-tooltip"
+                        >
+                          <svg class="basket__item-company-button-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#company"
+                            ></use>
+                          </svg>
+                        </button>
+                        <div
+                          class="basket__item-company-tooltip"
+                          id="company-tooltip-window"
+                        >
+                          <h4 class="basket__item-company-title">
+                            OOO «Вайлдберриз»
+                          </h4>
+                          <span class="basket__item-company-code">
+                            ОГРН: 5167746237148
+                          </span>
+                          <span class="basket__item-company-address">
+                            129337, Москва, улица Красная Сосна, 2, корпус 1,
+                            стр. 1, помещение 2, офис 34
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="basket__item-interactive">
+                      <div class="basket__item-counter">
+                        <button
+                          class="basket__item-counter-button basket__item-counter--inc"
+                        >
+                          -
+                        </button>
+                        <span class="basket__item-counter-num">0</span>
+                        <button
+                          class="basket__item-counter-button basket__item-counter--dec"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <span class="basket__item-counter-left">
+                        Осталось 2 шт.
+                      </span>
+                      <div class="basket__item-personal">
+                        <button class="basket__item-favorite">
+                          <svg class="basket__item-favorite-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#favorite"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button class="basket__item-delete">
+                          <svg class="basket__item-delete-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#delete"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="basket__item-prices">
+                      <span class="basket__item-price-new"> 522 сом </span>
+                      <button
+                        class="basket__item-price-old"
+                        id="prices-tooltip"
+                      >
+                        1051 сом
+                      </button>
+                      <div
+                        class="basket__item-prices-tooltip"
+                        id="prices-tooltip-window"
+                      >
+                        <div class="basket__item-prices-tooltip-row">
+                          <span class="basket__item-prices-tooltip-discount">
+                            Скидка 55%
+                          </span>
+                          <span class="basket__item-prices-tooltip-price">
+                            −300 сом
+                          </span>
+                        </div>
+                        <div class="basket__item-prices-tooltip-row">
+                          <span class="basket__item-prices-tooltip-discount">
+                            Скидка покупателя 10%
+                          </span>
+                          <span class="basket__item-prices-tooltip-price">
+                            −30 сом
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="basket__item">
+                    <label class="basket__checkbox-label">
+                      <input
+                        name="basket-item"
+                        type="checkbox"
+                        class="basket__checkbox"
+                      />
+                    </label>
+                    <picture class="basket__item-img-wrap">
+                      <img
+                        class="basket__item-img"
+                        src="src/assets/images/shirt@1x.jpg"
+                        alt=""
+                      />
+                    </picture>
+
+                    <div class="basket__item-text-wrap">
+                      <a href="#">
+                        <h3 class="basket__item-title">
+                          Футболка UZcotton мужская
+                        </h3>
+                      </a>
+                      <div class="basket__item-subinfo">
+                        <span class="basket__item-subinfo-text">
+                          Цвет: белый
+                        </span>
+                        <span class="basket__item-subinfo-text">
+                          Размер: 56
+                        </span>
+                      </div>
+                      <span class="basket__item-store">Коледино WB</span>
+                      <div class="basket__item-company">
+                        <span class="basket__item-company-name">
+                          OOO Вайлдберриз
+                        </span>
+                        <button
+                          class="basket__item-company-button"
+                          id="company-tooltip"
+                        >
+                          <svg class="basket__item-company-button-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#company"
+                            ></use>
+                          </svg>
+                        </button>
+                        <div
+                          class="basket__item-company-tooltip"
+                          id="company-tooltip-window"
+                        >
+                          <h4 class="basket__item-company-title">
+                            OOO «Вайлдберриз»
+                          </h4>
+                          <span class="basket__item-company-code">
+                            ОГРН: 5167746237148
+                          </span>
+                          <span class="basket__item-company-address">
+                            129337, Москва, улица Красная Сосна, 2, корпус 1,
+                            стр. 1, помещение 2, офис 34
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="basket__item-interactive">
+                      <div class="basket__item-counter">
+                        <button
+                          class="basket__item-counter-button basket__item-counter--inc"
+                        >
+                          -
+                        </button>
+                        <span class="basket__item-counter-num">0</span>
+                        <button
+                          class="basket__item-counter-button basket__item-counter--dec"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <span class="basket__item-counter-left">
+                        Осталось 2 шт.
+                      </span>
+                      <div class="basket__item-personal">
+                        <button class="basket__item-favorite">
+                          <svg class="basket__item-favorite-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#favorite"
+                            ></use>
+                          </svg>
+                        </button>
+                        <button class="basket__item-delete">
+                          <svg class="basket__item-delete-icon">
+                            <use
+                              href="src/assets/icons/sprite.svg#delete"
+                            ></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="basket__item-prices">
+                      <span class="basket__item-price-new"> 522 сом </span>
+                      <button
+                        class="basket__item-price-old"
+                        id="prices-tooltip"
+                      >
+                        1051 сом
+                      </button>
+                      <div
+                        class="basket__item-prices-tooltip"
+                        id="prices-tooltip-window"
+                      >
+                        <div class="basket__item-prices-tooltip-row">
+                          <span class="basket__item-prices-tooltip-discount">
+                            Скидка 55%
+                          </span>
+                          <span class="basket__item-prices-tooltip-price">
+                            −300 сом
+                          </span>
+                        </div>
+                        <div class="basket__item-prices-tooltip-row">
+                          <span class="basket__item-prices-tooltip-discount">
+                            Скидка покупателя 10%
+                          </span>
+                          <span class="basket__item-prices-tooltip-price">
+                            −30 сом
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
             <section class="payment main__card">
               <h2 class="payment__title main__card-title">Способ оплаты</h2>
               <button class="payment__change" id="change-payment-button">
