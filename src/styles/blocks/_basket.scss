@@ -74,6 +74,9 @@
       align-self: center;
       gap: 6px;
     }
+    &--checked::before {
+      opacity: 1;
+    }
     &:checked::before {
       opacity: 1;
     }

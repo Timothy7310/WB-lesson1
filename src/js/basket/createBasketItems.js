@@ -12,7 +12,7 @@ export const createBasketItems = () => {
             <input
                 name="basket-item"
                 type="checkbox"
-                class="basket__checkbox"
+                class="basket__checkbox basket__checkbox--item"
             />
             </label>
             <picture class="basket__item-img-wrap">
