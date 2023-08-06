@@ -10,6 +10,11 @@ export const handleBasket = () => {
   const basketCheckboxAll = document.querySelector("#basket-checkbox-all");
   const allCheckboxItem = document.querySelectorAll(".basket__checkbox--item");
 
+  const basketAccordionCurrent = document.querySelector(
+    ".basket__accordion-button"
+  );
+  const basketCurrentList = document.querySelector("#basket-list-current");
+
   const checkedClass = "basket__checkbox--checked";
 
   basketListCurrent.addEventListener("click", (e) => {
@@ -55,5 +60,11 @@ export const handleBasket = () => {
         x.classList.remove(checkedClass);
       }
     });
+  });
+
+  basketAccordionCurrent.addEventListener("click", (e) => {
+    basketAccordionCurrent.classList.toggle("basket__accordion-button--close");
+    basketCurrentList.classList.toggle("basket__list--hidden");
+    basketCheckboxAll.disabled = basketCheckboxAll.disabled ? false : true;
   });
 };

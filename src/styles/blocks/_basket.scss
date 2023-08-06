@@ -1,6 +1,7 @@
 .basket {
   grid-column: 1 / 3;
   &-current {
+    overflow: hidden;
     &__top {
       display: flex;
       justify-content: space-between;
@@ -19,16 +20,12 @@
       width: 100%;
       height: 100%;
       fill: var(--color-secondary);
-      transition: fill var(--base-animation);
-    }
-    &--open {
-      & .basket__accordion-button-icon {
-        transform: rotate(0);
-      }
+      transform: rotate(-180deg);
+      transition: fill var(--base-animation), transform var(--base-animation);
     }
     &--close {
       & .basket__accordion-button-icon {
-        transform: rotate(-180deg);
+        transform: rotate(0);
       }
     }
     &:hover {
@@ -90,6 +87,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    &--hidden {
+      display: none;
+    }
   }
   &__item {
     display: grid;
