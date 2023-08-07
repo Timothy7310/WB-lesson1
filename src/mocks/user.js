@@ -30,8 +30,8 @@ export const userData = {
         webpMedium: "src/assets/images/shirt@1x.webp",
         webpLarge: "src/assets/images/shirt@2x.webp",
       },
-      price: 522,
-      discount: 55,
+      price: 1051,
+      discount: 40,
       total: 2,
       shipping: [
         {
@@ -80,7 +80,7 @@ export const userData = {
     {
       id: 3,
       isAvailable: true,
-      name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
+      name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber&#8209;Castell',
       store: "Коледино WB",
       company: {
         name: "OOO Вайлдберриз",
@@ -108,29 +108,6 @@ export const userData = {
     {
       id: 4,
       isAvailable: false,
-      name: "Brauberg / Ручки шариковые синие набор для школы 50 штук, линия 0,35 мм",
-      store: "Коледино WB",
-      company: {
-        name: "САМСОН",
-        code: "1023404239540",
-        address:
-          "400059, Волгоградская обл, г Волгоград, ул им. Никитина, д. 2, помещ. 17",
-      },
-      subinfo: null,
-      images: {
-        commonMedium: "src/assets/images/pencils@1x.jpg",
-        commonLarge: "src/assets/images/pencils@2x.jpg",
-        webpMedium: "src/assets/images/pencils@1x.webp",
-        webpLarge: "src/assets/images/pencils@2x.webp",
-      },
-      price: null,
-      discount: null,
-      total: null,
-      shipping: null,
-    },
-    {
-      id: 5,
-      isAvailable: false,
       name: "Ручки шариковые синие набор для школы 50 штук, линия 0,35 мм",
       store: "Коледино WB",
       company: {
@@ -152,7 +129,7 @@ export const userData = {
       shipping: null,
     },
     {
-      id: 6,
+      id: 5,
       isAvailable: false,
       name: "Кукла Барби Безграничные движения GXF04",
       store: "Коледино WB",
@@ -174,7 +151,7 @@ export const userData = {
       shipping: null,
     },
     {
-      id: 7,
+      id: 6,
       isAvailable: false,
       name: "Мягкая игрушка Покемон/Pokemon ",
       store: "Коледино WB",

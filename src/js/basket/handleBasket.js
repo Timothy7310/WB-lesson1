@@ -13,10 +13,10 @@ export const handleBasket = () => {
   const basketCheckboxAll = document.querySelector("#basket-checkbox-all");
   const allCheckboxItem = document.querySelectorAll(".basket__checkbox--item");
 
-  const basketAccordionCurrent = document.querySelector(
-    ".basket__accordion-button"
-  );
+  const basketAccordionCurrent = document.querySelector("#accordion-current");
   const basketCurrentList = document.querySelector("#basket-list-current");
+  const basketAccordionMissing = document.querySelector("#accordion-missing");
+  const basketMissingList = document.querySelector("#basket-list-missing");
 
   const checkedClass = "basket__checkbox--checked";
 
@@ -85,5 +85,10 @@ export const handleBasket = () => {
     basketAccordionCurrent.classList.toggle("basket__accordion-button--close");
     basketCurrentList.classList.toggle("basket__list--hidden");
     basketCheckboxAll.disabled = basketCheckboxAll.disabled ? false : true;
+  });
+
+  basketAccordionMissing.addEventListener("click", (e) => {
+    basketAccordionMissing.classList.toggle("basket__accordion-button--close");
+    basketMissingList.classList.toggle("basket__list--hidden");
   });
 };

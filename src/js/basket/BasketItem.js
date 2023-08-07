@@ -4,6 +4,7 @@ export class BasketItem {
     this.count = count;
     this.userDiscount = userDiscount;
     this.root = document.querySelector("#basket-list-current");
+    this.rootMissing = document.querySelector("#basket-list-missing");
     this.rootItemSelector = `.basket__item[data-id="${this.data.id}"]`;
   }
 
@@ -52,7 +53,11 @@ export class BasketItem {
   renderSubinfo() {
     let result = "";
     this.data.subinfo.forEach((info) => {
-      result += `<span class="basket__item-subinfo-text">${info.name}: ${info.value}</span>`;
+      const className =
+        info.name.toLowerCase() === "цвет"
+          ? "basket__item-subinfo-text--color"
+          : "basket__item-subinfo-text--size";
+      result += `<span class="basket__item-subinfo-text ${className}">${info.name}: ${info.value}</span>`;
     });
     return result;
   }
@@ -63,26 +68,35 @@ export class BasketItem {
       element.classList.add("basket__item");
       element.setAttribute("data-id", this.data.id);
       const elementHTML = `
-        <label class="basket__checkbox-label">
-            <input
-                name="basket-item"
-                type="checkbox"
-                class="basket__checkbox basket__checkbox--item"
-            />
-        </label>
-        <picture class="basket__item-img-wrap">
+        <div class="basket__item-checkbox-wrap">
+          <label class="basket__checkbox-label">
+              <input
+                  name="basket-item"
+                  type="checkbox"
+                  class="basket__checkbox basket__checkbox--item"
+              />
+          </label>
+          <picture class="basket__item-img-wrap">
             <source
-                srcset="${this.data.images.webpMedium} 1x, 
-                ${this.data.images.webpLarge} 2x"
-                type="image/webp"
+              srcset="${this.data.images.webpMedium} 1x, 
+              ${this.data.images.webpLarge} 2x"
+              type="image/webp"
             />
             <img
-                class="basket__item-img"
-                src="${this.data.images.commonMedium}"
-                srcset="${this.data.images.commonLarge} 2x"
-                alt=""
+              class="basket__item-img"
+              src="${this.data.images.commonMedium}"
+              srcset="${this.data.images.commonLarge} 2x"
+              alt=""
             />
-        </picture>
+          </picture>
+          ${
+            this.data?.subinfo?.[1]?.value
+              ? `<span class="basket__item-size-mob">
+                ${this.data.subinfo[1].value}
+              </span>`
+              : ""
+          }
+        </div>
 
         <div class="basket__item-text-wrap">
             <a href="#">
@@ -173,14 +187,14 @@ export class BasketItem {
                       this.data.discount + this.userDiscount,
                       this.getTotalPrice()
                     )
-                )} сом 
+                ).toLocaleString()} сом 
             </span>
             <button 
                 class="basket__item-price-old" 
                 id="prices-tooltip--${this.data.id}"
                 data-id="${this.data.id}"
             >
-                ${this.getTotalPrice()} сом
+                ${this.getTotalPrice().toLocaleString()} сом
             </button>
             <div 
                 class="basket__item-prices-tooltip" 
@@ -192,10 +206,12 @@ export class BasketItem {
                         Скидка ${this.data.discount}%
                     </span>
                     <span class="basket__item-prices-tooltip-price">
-                        −${this.getDiscountSum(
-                          this.data.discount,
-                          this.getTotalPrice()
-                        ).toFixed()} сом
+                        −${Math.round(
+                          this.getDiscountSum(
+                            this.data.discount,
+                            this.getTotalPrice()
+                          )
+                        ).toLocaleString()} сом
                     </span>
                 </div>
                 <div class="basket__item-prices-tooltip-row">
@@ -203,10 +219,12 @@ export class BasketItem {
                         Скидка покупателя ${this.userDiscount}%
                     </span>
                     <span class="basket__item-prices-tooltip-price">
-                        −${this.getDiscountSum(
-                          this.userDiscount,
-                          this.getTotalPrice()
-                        ).toFixed()} сом
+                        −${Math.round(
+                          this.getDiscountSum(
+                            this.userDiscount,
+                            this.getTotalPrice()
+                          )
+                        ).toLocaleString()} сом
                     </span>
                 </div>
             </div>
@@ -215,6 +233,8 @@ export class BasketItem {
       element.innerHTML = elementHTML;
 
       this.root.append(element);
+    } else {
+      this.renderMissing();
     }
   }
 
@@ -230,14 +250,14 @@ export class BasketItem {
                   this.data.discount + this.userDiscount,
                   this.getTotalPrice()
                 )
-            )} сом
+            ).toLocaleString()} сом
         </span>
         <button 
             class="basket__item-price-old" 
             id="prices-tooltip--${this.data.id}"
             data-id="${this.data.id}"
         >
-            ${this.getTotalPrice()} сом
+            ${this.getTotalPrice().toLocaleString()} сом
         </button>
         <div 
             class="basket__item-prices-tooltip" 
@@ -249,10 +269,12 @@ export class BasketItem {
                     Скидка ${this.data.discount}%
                 </span>
                 <span class="basket__item-prices-tooltip-price">
-                    −${this.getDiscountSum(
-                      this.data.discount,
-                      this.getTotalPrice()
-                    ).toFixed()} сом
+                    −${Math.round(
+                      this.getDiscountSum(
+                        this.data.discount,
+                        this.getTotalPrice()
+                      )
+                    ).toLocaleString()} сом
                 </span>
             </div>
             <div class="basket__item-prices-tooltip-row">
@@ -260,10 +282,12 @@ export class BasketItem {
                     Скидка покупателя ${this.userDiscount}%
                 </span>
                 <span class="basket__item-prices-tooltip-price">
-                    −${this.getDiscountSum(
-                      this.userDiscount,
-                      this.getTotalPrice()
-                    ).toFixed()} сом
+                    −${Math.round(
+                      this.getDiscountSum(
+                        this.userDiscount,
+                        this.getTotalPrice()
+                      )
+                    ).toLocaleString()} сом
                 </span>
             </div>
         </div>
@@ -274,5 +298,57 @@ export class BasketItem {
     const root = document.querySelector(this.rootItemSelector);
     const counterRoot = root.querySelector(".basket__item-counter-num");
     counterRoot.textContent = this.count;
+  }
+
+  renderMissing() {
+    const element = document.createElement("li");
+    element.className = "basket__item basket__item--missing";
+    element.setAttribute("data-id", this.data.id);
+    const elementHTML = `
+        <picture class="basket__item-img-wrap">
+            <source
+                srcset="${this.data.images.webpMedium} 1x, 
+                ${this.data.images.webpLarge} 2x"
+                type="image/webp"
+            />
+            <img
+                class="basket__item-img basket__item-img--missing"
+                src="${this.data.images.commonMedium}"
+                srcset="${this.data.images.commonLarge} 2x"
+                alt=""
+            />
+        </picture>
+
+        <div class="basket__item-text-wrap">
+          <a href="#">
+              <h3 class="basket__item-title basket__item-title--missing">${
+                this.data.name
+              }</h3>
+          </a>
+          ${
+            this.data.subinfo
+              ? `<div class="basket__item-subinfo">
+                      ${this.renderSubinfo()}
+                  </div>`
+              : ""
+          }
+        </div>
+        <div class="basket__item-interactive basket__item-interactive--missing">
+          <div class="basket__item-personal">
+              <button class="basket__item-favorite">
+                  <svg class="basket__item-favorite-icon">
+                      <use href="src/assets/icons/sprite.svg#favorite"></use>
+                  </svg>
+              </button>
+              <button class="basket__item-delete">
+                  <svg class="basket__item-delete-icon">
+                      <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+              </button>
+          </div>
+        </div>
+      `;
+    element.innerHTML = elementHTML;
+    this.rootMissing.append(element);
   }
 }
