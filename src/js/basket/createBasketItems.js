@@ -1,5 +1,6 @@
 import { userData } from "../../mocks/user";
 import { createSubinfo } from "./createSubinfo";
+import { getDiscountSum } from "./getDiscountSum";
 
 export const createBasketItems = () => {
   let result = "";
@@ -102,7 +103,13 @@ export const createBasketItems = () => {
             </div>
 
             <div class="basket__item-prices">
-                <span class="basket__item-price-new"> 522 сом </span>
+                <span class="basket__item-price-new"> ${Math.round(
+                  item.price -
+                    getDiscountSum(
+                      item.discount + userData.userDiscount,
+                      item.price
+                    )
+                )} сом </span>
                 <button 
                     class="basket__item-price-old" 
                     id="prices-tooltip--${item.id}"
@@ -120,7 +127,10 @@ export const createBasketItems = () => {
                             Скидка ${item.discount}%
                         </span>
                         <span class="basket__item-prices-tooltip-price">
-                            −300 сом
+                            −${getDiscountSum(
+                              item.discount,
+                              item.price
+                            ).toFixed()} сом
                         </span>
                     </div>
                     <div class="basket__item-prices-tooltip-row">
@@ -128,7 +138,10 @@ export const createBasketItems = () => {
                             Скидка покупателя ${userData.userDiscount}%
                         </span>
                         <span class="basket__item-prices-tooltip-price">
-                            −30 сом
+                            −${getDiscountSum(
+                              userData.userDiscount,
+                              item.price
+                            ).toFixed()} сом
                         </span>
                     </div>
                 </div>
