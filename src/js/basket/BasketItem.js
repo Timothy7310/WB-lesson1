@@ -1,3 +1,5 @@
+import sprite from "../../assets/icons/sprite.svg";
+
 export class BasketItem {
   constructor(data, count, userDiscount) {
     this.data = data;
@@ -120,7 +122,7 @@ export class BasketItem {
                     data-id="${this.data.id}"
                 >
                     <svg class="basket__item-company-button-icon">
-                        <use href="src/assets/icons/sprite.svg#company"></use>
+                        <use href="${sprite}#company"></use>
                     </svg>
                 </button>
                 <div 
@@ -148,7 +150,7 @@ export class BasketItem {
                 }" class="basket__item-counter-button basket__item-counter--dec"  
                 ${this.count <= 1 ? 'disabled=""' : ""}>
                     <svg class="basket__item-counter-button-icon">
-                        <use href="src/assets/icons/sprite.svg#minus"></use>
+                        <use href="${sprite}#minus"></use>
                     </svg>
                 </button>
                 <span class="basket__item-counter-num">${this.count}</span>
@@ -156,7 +158,7 @@ export class BasketItem {
                   this.data.id
                 }" class="basket__item-counter-button basket__item-counter--inc">
                     <svg class="basket__item-counter-button-icon">
-                        <use href="src/assets/icons/sprite.svg#plus"></use>
+                        <use href="${sprite}#plus"></use>
                     </svg>
                 </button>
             </div>
@@ -168,12 +170,12 @@ export class BasketItem {
             <div class="basket__item-personal">
                 <button class="basket__item-favorite">
                     <svg class="basket__item-favorite-icon">
-                        <use href="src/assets/icons/sprite.svg#favorite"></use>
+                        <use href="${sprite}#favorite"></use>
                     </svg>
                 </button>
                 <button class="basket__item-delete">
                     <svg class="basket__item-delete-icon">
-                        <use href="src/assets/icons/sprite.svg#delete"></use>
+                        <use href="${sprite}#delete"></use>
                     </svg>
                 </button>
             </div>
@@ -337,12 +339,12 @@ export class BasketItem {
           <div class="basket__item-personal">
               <button class="basket__item-favorite">
                   <svg class="basket__item-favorite-icon">
-                      <use href="src/assets/icons/sprite.svg#favorite"></use>
+                      <use href="${sprite}#favorite"></use>
                   </svg>
               </button>
               <button class="basket__item-delete">
                   <svg class="basket__item-delete-icon">
-                      <use href="src/assets/icons/sprite.svg#delete"></use>
+                      <use href="${sprite}#delete"></use>
                   </svg>
               </button>
           </div>
