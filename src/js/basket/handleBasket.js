@@ -1,10 +1,13 @@
 import { openCompanyTooltip } from "./openCompanyTooltip";
 import { openPricesTooltip } from "./openPricesTooltip";
+import { basketItems } from "../../mocks/user";
 
 export const handleBasket = () => {
   const companyTooltipClass = ".basket__item-company-button";
   const pricesTooltipClass = ".basket__item-price-old";
   const basketCheckboxClass = ".basket__checkbox";
+  const basketIncrementClass = ".basket__item-counter--inc";
+  const basketDecrementClass = ".basket__item-counter--dec";
 
   const basketListCurrent = document.querySelector("#basket-list-current");
   const basketCheckboxAll = document.querySelector("#basket-checkbox-all");
@@ -46,6 +49,22 @@ export const handleBasket = () => {
       if (isEveryCheckedItem) {
         basketCheckboxAll.classList.add(checkedClass);
       }
+    }
+
+    if (target.closest(basketIncrementClass)) {
+      const element = target.closest(basketIncrementClass);
+      const id = element.dataset.id;
+      const [item] = basketItems.filter((x) => x.id === +id);
+
+      item.class.incCount();
+    }
+
+    if (target.closest(basketDecrementClass)) {
+      const element = target.closest(basketDecrementClass);
+      const id = element.dataset.id;
+      const [item] = basketItems.filter((x) => x.id === +id);
+
+      item.class.decCount();
     }
   });
 

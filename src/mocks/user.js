@@ -1,3 +1,5 @@
+import { BasketItem } from "../js/basket/BasketItem";
+
 export const userData = {
   userDiscount: 10,
   items: [
@@ -195,3 +197,10 @@ export const userData = {
     },
   ],
 };
+
+export const basketItems = userData.items.map((data) => {
+  return {
+    id: data.id,
+    class: new BasketItem(data, 1, userData.userDiscount),
+  };
+});
