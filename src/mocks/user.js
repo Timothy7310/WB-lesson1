@@ -1,5 +1,35 @@
 import { BasketItem } from "../js/basket/BasketItem";
 
+import shirtCommonMedium from "../assets/images/shirt@1x.jpg";
+import shirtCommonLarge from "../assets/images/shirt@2x.jpg";
+import shirtWebpMedium from "../assets/images/shirt@1x.webp";
+import shirtWebpLarge from "../assets/images/shirt@2x.webp";
+
+import phoneCommonMedium from "../assets/images/phone@1x.jpg";
+import phoneCommonLarge from "../assets/images/phone@2x.jpg";
+import phoneWebpMedium from "../assets/images/phone@1x.webp";
+import phoneWebpLarge from "../assets/images/phone@2x.webp";
+
+import pencilsCommonMedium from "../assets/images/pencils@1x.jpg";
+import pencilsCommonLarge from "../assets/images/pencils@2x.jpg";
+import pencilsWebpMedium from "../assets/images/pencils@1x.webp";
+import pencilsWebpLarge from "../assets/images/pencils@2x.webp";
+
+import penCommonMedium from "../assets/images/pen@1x.jpg";
+import penCommonLarge from "../assets/images/pen@2x.jpg";
+import penWebpMedium from "../assets/images/pen@1x.webp";
+import penWebpLarge from "../assets/images/pen@2x.webp";
+
+import barbieCommonMedium from "../assets/images/barbie@1x.jpg";
+import barbieCommonLarge from "../assets/images/barbie@2x.jpg";
+import barbieWebpMedium from "../assets/images/barbie@1x.webp";
+import barbieWebpLarge from "../assets/images/barbie@2x.webp";
+
+import pokemonCommonMedium from "../assets/images/pokemon@1x.jpg";
+import pokemonCommonLarge from "../assets/images/pokemon@2x.jpg";
+import pokemonWebpMedium from "../assets/images/pokemon@1x.webp";
+import pokemonWebpLarge from "../assets/images/pokemon@2x.webp";
+
 export const userData = {
   userDiscount: 10,
   items: [
@@ -25,10 +55,10 @@ export const userData = {
         },
       ],
       images: {
-        commonMedium: "src/assets/images/shirt@1x.jpg",
-        commonLarge: "src/assets/images/shirt@2x.jpg",
-        webpMedium: "src/assets/images/shirt@1x.webp",
-        webpLarge: "src/assets/images/shirt@2x.webp",
+        commonMedium: shirtCommonMedium,
+        commonLarge: shirtCommonLarge,
+        webpMedium: shirtWebpMedium,
+        webpLarge: shirtWebpLarge,
       },
       price: 1051,
       discount: 40,
@@ -58,10 +88,10 @@ export const userData = {
         },
       ],
       images: {
-        commonMedium: "src/assets/images/phone@1x.jpg",
-        commonLarge: "src/assets/images/phone@2x.jpg",
-        webpMedium: "src/assets/images/phone@1x.webp",
-        webpLarge: "src/assets/images/phone@2x.webp",
+        commonMedium: phoneCommonMedium,
+        commonLarge: phoneCommonLarge,
+        webpMedium: phoneWebpMedium,
+        webpLarge: phoneWebpLarge,
       },
       price: 11500,
       discount: 55,
@@ -90,10 +120,10 @@ export const userData = {
       },
       subinfo: null,
       images: {
-        commonMedium: "src/assets/images/pencils@1x.jpg",
-        commonLarge: "src/assets/images/pencils@2x.jpg",
-        webpMedium: "src/assets/images/pencils@1x.webp",
-        webpLarge: "src/assets/images/pencils@2x.webp",
+        commonMedium: pencilsCommonMedium,
+        commonLarge: pencilsCommonLarge,
+        webpMedium: pencilsWebpMedium,
+        webpLarge: pencilsWebpLarge,
       },
       price: 475,
       discount: 55,
@@ -118,10 +148,10 @@ export const userData = {
       },
       subinfo: null,
       images: {
-        commonMedium: "src/assets/images/pen@1x.jpg",
-        commonLarge: "src/assets/images/pen@2x.jpg",
-        webpMedium: "src/assets/images/pen@1x.webp",
-        webpLarge: "src/assets/images/pen@2x.webp",
+        commonMedium: penCommonMedium,
+        commonLarge: penCommonLarge,
+        webpMedium: penWebpMedium,
+        webpLarge: penWebpLarge,
       },
       price: null,
       discount: null,
@@ -140,10 +170,10 @@ export const userData = {
       },
       subinfo: null,
       images: {
-        commonMedium: "src/assets/images/barbie@1x.jpg",
-        commonLarge: "src/assets/images/barbie@2x.jpg",
-        webpMedium: "src/assets/images/barbie@1x.webp",
-        webpLarge: "src/assets/images/barbie@2x.webp",
+        commonMedium: barbieCommonMedium,
+        commonLarge: barbieCommonLarge,
+        webpMedium: barbieWebpMedium,
+        webpLarge: barbieWebpLarge,
       },
       price: null,
       discount: null,
@@ -162,10 +192,10 @@ export const userData = {
       },
       subinfo: null,
       images: {
-        commonMedium: "src/assets/images/pokemon@1x.jpg",
-        commonLarge: "src/assets/images/pokemon@2x.jpg",
-        webpMedium: "src/assets/images/pokemon@1x.webp",
-        webpLarge: "src/assets/images/pokemon@2x.webp",
+        commonMedium: pokemonCommonMedium,
+        commonLarge: pokemonCommonLarge,
+        webpMedium: pokemonWebpMedium,
+        webpLarge: pokemonWebpLarge,
       },
       price: null,
       discount: null,
