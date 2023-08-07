@@ -12,8 +12,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Товары и точка</title>
-    <script type="module" crossorigin src="./assets/index-8687b008.js"></script>
-    <link rel="stylesheet" href="./assets/index-4408c690.css">
+    <script type="module" crossorigin src="./assets/index-f52b1a6f.js"></script>
+    <link rel="stylesheet" href="./assets/index-c78dbb10.css">
   </head>
   <body>
     <div class="wrapper">
@@ -44,7 +44,7 @@
                 aria-label="Поиск"
               >
                 <svg class="header__search-button-icon">
-                  <use href="./assets/sprite-c30b7c8d.svg#search"></use>
+                  <use href="./assets/sprite-b16ddd98.svg#search"></use>
                 </svg>
               </button>
               <button
@@ -53,7 +53,7 @@
                 aria-label="Открыть поиск"
               >
                 <svg class="header__search-button-icon">
-                  <use href="./assets/sprite-c30b7c8d.svg#search"></use>
+                  <use href="./assets/sprite-b16ddd98.svg#search"></use>
                 </svg>
               </button>
             </form>
@@ -62,7 +62,7 @@
                 <li class="header__navigation-item">
                   <a href="#" class="header__navigation-link">
                     <svg class="header__navigation-link-icon">
-                      <use href="./assets/sprite-c30b7c8d.svg#profile"></use>
+                      <use href="./assets/sprite-b16ddd98.svg#profile"></use>
                     </svg>
                     <span class="header__navigation-link-text">Профиль</span>
                   </a>
@@ -70,7 +70,7 @@
                 <li class="header__navigation-item">
                   <a href="#" class="header__navigation-link">
                     <svg class="header__navigation-link-icon">
-                      <use href="./assets/sprite-c30b7c8d.svg#basket"></use>
+                      <use href="./assets/sprite-b16ddd98.svg#basket"></use>
                     </svg>
                     <span class="header__navigation-link-text">Корзина</span>
                   </a>
@@ -80,10 +80,59 @@
           </div>
         </div>
         <div class="header__overlay"></div>
+        <div class="header__bg"></div>
       </header>
       <main class="main">
         <div class="container container__main">
           <div class="main__wrap">
+            <section class="basket">
+              <h2 class="basket__title container__main-title">Корзина</h2>
+              <div class="basket-current">
+                <div class="basket-current__top">
+                  <label class="basket__checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="basket-item"
+                      class="basket__checkbox"
+                      id="basket-checkbox-all"
+                    />
+                    Выбрать все
+                  </label>
+                  <button
+                    class="basket__accordion-button basket__accordion-button--open"
+                    id="accordion-current"
+                  >
+                    <svg class="basket__accordion-button-icon">
+                      <use href="./assets/sprite-b16ddd98.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul
+                  class="basket__list basket__list--current"
+                  id="basket-list-current"
+                ></ul>
+              </div>
+
+              <div class="basket-missing">
+                <div class="basket-missing__top">
+                  <h3 class="basket-missing__title">Отсутствуют · 3 товара</h3>
+                  <button
+                    class="basket__accordion-button basket__accordion-button--open"
+                    id="accordion-missing"
+                  >
+                    <svg class="basket__accordion-button-icon">
+                      <use href="./assets/sprite-b16ddd98.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul
+                  class="basket__list basket__list--missing"
+                  id="basket-list-missing"
+                ></ul>
+              </div>
+            </section>
             <section class="payment main__card">
               <h2 class="payment__title main__card-title">Способ оплаты</h2>
               <button class="payment__change" id="change-payment-button">
@@ -197,9 +246,9 @@
         <div class="container">
           <span class="footer__info">© 2022 ООО «Товары и точка»</span>
         </div>
+        <div class="footer__bg"></div>
       </footer>
     </div>
-    <!-- TODO: проверить чтобы на на устройствах с маленькой высотой можно было все заполнить и закрыть попап -->
     <div class="payment-popup" id="payment-popup">
       <div class="payment-popup__overlay" id="payment-popup-overlay"></div>
       <div class="payment-popup__content">
@@ -210,7 +259,7 @@
           aria-label="Закрыть"
         >
           <svg class="payment-popup__content-close-icon">
-            <use href="./assets/sprite-c30b7c8d.svg#close-form"></use>
+            <use href="./assets/sprite-b16ddd98.svg#close-form"></use>
           </svg>
         </button>
         <form class="payment-popup__form" id="payment-form" action="">
