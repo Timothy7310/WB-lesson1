@@ -90,7 +90,7 @@
                   <label class="basket__checkbox-label">
                     <input
                       type="checkbox"
-                      name="basket-item"
+                      name="basket-items"
                       class="basket__checkbox"
                       id="basket-checkbox-all"
                     />
@@ -160,56 +160,93 @@
                   <span class="delivery__row-name">Стоимость доставки</span>
                   <span class="delivery__price">Бесплатно</span>
                 </div>
-                <div class="delivery__row delivery__row--date">
-                  <span class="delivery__row-name delivery__date">
-                    5—6 февраля
-                  </span>
-                  <div class="delivery__date-items">
-                    <div class="delivery__date-item">
-                      <picture>
-                        <img
-                          class="delivery__date-item-img"
-                          alt=""
-                          src="src/assets/images/shirt@1x.jpg"
-                        />
-                      </picture>
-                    </div>
-                    <div class="delivery__date-item">
-                      <picture>
-                        <img
-                          class="delivery__date-item-img"
-                          alt=""
-                          src="src/assets/images/phone@1x.jpg"
-                        />
-                      </picture>
-                      <span class="delivery__date-item-count">184</span>
-                    </div>
-                    <div class="delivery__date-item">
-                      <picture>
-                        <img
-                          class="delivery__date-item-img"
-                          alt=""
-                          src="src/assets/images/pencils@1x.jpg"
-                        />
-                      </picture>
-                      <span class="delivery__date-item-count">2</span>
+                <div class="delivery__items" id="delivery-items">
+                  <div class="delivery__row delivery__row--date">
+                    <span class="delivery__row-name delivery__date">
+                      5—6 февраля
+                    </span>
+                    <div class="delivery__date-items">
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/shirt@1x.webp 1x,
+                              src/assets/images/shirt@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Футболка UZcotton мужская"
+                            src="src/assets/images/shirt@1x.jpg"
+                            srcset="src/assets/images/shirt@2x.jpg 2x"
+                          />
+                        </picture>
+                      </div>
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/phone@1x.webp 1x,
+                              src/assets/images/phone@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe"
+                            src="src/assets/images/phone@1x.jpg"
+                            srcset="src/assets/images/phone@2x.jpg 2x"
+                          />
+                        </picture>
+
+                        <span class="delivery__date-item-count">184</span>
+                      </div>
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/pencils@1x.webp 1x,
+                              src/assets/images/pencils@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt='Карандаши
+                            цветные Faber-Castell "Замок", набор 24 цвета,
+                            заточенные, шестигранные, Faber‑Castell'
+                            src="src/assets/images/pencils@1x.jpg"
+                            srcset="src/assets/images/pencils@2x.jpg 2x"
+                          />
+                        </picture>
+                        <span class="delivery__date-item-count">2</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="delivery__row delivery__row--date">
-                  <span class="delivery__row-name delivery__date">
-                    7—8 февраля
-                  </span>
-                  <div class="delivery__date-items">
-                    <div class="delivery__date-item">
-                      <picture>
-                        <img
-                          class="delivery__date-item-img"
-                          alt=""
-                          src="src/assets/images/phone@1x.jpg"
-                        />
-                      </picture>
-                      <span class="delivery__date-item-count">16</span>
+                  <div class="delivery__row delivery__row--date">
+                    <span class="delivery__row-name delivery__date">
+                      7—8 февраля
+                    </span>
+                    <div class="delivery__date-items">
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/phone@1x.webp 1x,
+                              src/assets/images/phone@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe"
+                            src="src/assets/images/phone@1x.jpg"
+                            srcset="src/assets/images/phone@2x.jpg 2x"
+                          />
+                        </picture>
+                        <span class="delivery__date-item-count">16</span>
+                      </div>
                     </div>
                   </div>
                 </div>

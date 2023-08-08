@@ -73,6 +73,7 @@ export class BasketItem {
         <div class="basket__item-checkbox-wrap">
           <label class="basket__checkbox-label">
               <input
+                  data-id="${this.data.id}"
                   name="basket-item"
                   type="checkbox"
                   class="basket__checkbox basket__checkbox--item"

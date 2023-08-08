@@ -130,7 +130,7 @@ export const userData = {
       total: 2,
       shipping: [
         {
-          items: 184,
+          items: 2,
           date: new Date(new Date().getTime() + 3 * 86400000).getTime(),
         },
       ],
@@ -211,3 +211,7 @@ export const basketItems = userData.items.map((data) => {
     class: new BasketItem(data, 1, userData.userDiscount),
   };
 });
+
+export const getBasketItemByID = (id) => {
+  return basketItems.find((x) => x.id === id).class;
+};

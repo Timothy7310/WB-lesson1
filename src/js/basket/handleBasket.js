@@ -1,6 +1,7 @@
 import { openCompanyTooltip } from "./openCompanyTooltip";
 import { openPricesTooltip } from "./openPricesTooltip";
 import { basketItems } from "../../mocks/user";
+import { createDeliveryInfo } from "../delivery/createDeliveryInfo";
 
 export const handleBasket = () => {
   const companyTooltipClass = ".basket__item-company-button";
@@ -49,6 +50,11 @@ export const handleBasket = () => {
       if (isEveryCheckedItem) {
         basketCheckboxAll.classList.add(checkedClass);
       }
+
+      const allCheckedItems = document.querySelectorAll(
+        'input[name="basket-item"].basket__checkbox--checked'
+      );
+      createDeliveryInfo(allCheckedItems);
     }
 
     if (target.closest(basketIncrementClass)) {
@@ -79,6 +85,11 @@ export const handleBasket = () => {
         x.classList.remove(checkedClass);
       }
     });
+
+    const allCheckedItems = document.querySelectorAll(
+      'input[name="basket-item"].basket__checkbox--checked'
+    );
+    createDeliveryInfo(allCheckedItems);
   });
 
   basketAccordionCurrent.addEventListener("click", (e) => {
