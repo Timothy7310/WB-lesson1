@@ -2,11 +2,12 @@
   &__wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-    padding: 10px 0px 10px 0px;
+    row-gap: 16px;
+    column-gap: 32px;
+    padding: 10px 0px 27px 0px;
   }
   &__card {
-    padding: 16px 24px 24px 24px;
+    padding: 16px 24px 25px 24px;
     background-color: var(--color-white);
     border-radius: 16px;
     grid-column: 1 / 3;

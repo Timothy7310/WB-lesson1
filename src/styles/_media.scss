@@ -224,6 +224,7 @@
   .main {
     &__wrap {
       padding: 0px 0px 10px 0px;
+      row-gap: 10px;
     }
     &__card {
       padding: 16px 16px 24px 16px;
@@ -235,6 +236,7 @@
   }
   .basket {
     padding: 0px 16px;
+    margin-bottom: 22px;
     &-current {
       margin-bottom: 46px;
     }
@@ -295,6 +297,21 @@
       &-delete {
         width: 44px;
       }
+    }
+  }
+  .delivery {
+    &__info {
+      margin: 8px 0px 19px 0px;
+      gap: 18px;
+    }
+    &__row {
+      grid-template-columns: 1fr;
+      &--date {
+        row-gap: 12px;
+      }
+    }
+    &__return {
+      padding: 0px 8px;
     }
   }
   .payment {
