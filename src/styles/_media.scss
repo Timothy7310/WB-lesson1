@@ -312,6 +312,20 @@
     }
     &__return {
       padding: 0px 8px;
+      &-tooltip {
+        transform: translate(0%);
+        right: 20px;
+      }
+    }
+    &-popup__content {
+      height: 100vh;
+      max-width: 100vw;
+      border-radius: 0;
+      padding: 16px;
+    }
+    &-popup__form-choose {
+      width: 100%;
+      max-width: 280px;
     }
   }
   .payment {
@@ -322,6 +336,7 @@
       height: 100vh;
       max-width: 100vw;
       border-radius: 0;
+      padding: 16px;
     }
   }
   .contacts {
