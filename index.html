@@ -140,7 +140,7 @@
                 <div class="delivery__row">
                   <span class="delivery__row-name">Пункт выдачи</span>
                   <div class="delivery__address-wrap">
-                    <span class="delivery__address">
+                    <span class="delivery__address" id="delivery-address">
                       Бишкек, улица Ахматбека Суюмбаева, 12/1
                     </span>
                     <div class="delivery__address-info">
@@ -462,6 +462,193 @@
             </li>
           </ul>
           <button class="payment-popup__content-choose" type="submit">
+            Выбрать
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="delivery-popup" id="delivery-popup">
+      <div class="delivery-popup__overlay" id="delivery-popup-overlay"></div>
+      <div class="delivery-popup__content">
+        <h2 class="delivery-popup__content-title">Способ доставки</h2>
+        <button
+          class="delivery-popup__content-close"
+          id="delivery-popup-close"
+          aria-label="Закрыть"
+        >
+          <svg class="delivery-popup__content-close-icon">
+            <use href="src/assets/icons/sprite.svg#close-form"></use>
+          </svg>
+        </button>
+        <form action="" class="delivery-popup__form" id="delivery-popup-form">
+          <div class="delivery-popup__form-type">
+            <label class="delivery-popup__form-type-label">
+              <input
+                class="delivery-popup__form-type-radio"
+                type="radio"
+                name="delivery-type"
+                value="pick-up"
+              />
+              В пункт выдачи
+            </label>
+            <label class="delivery-popup__form-type-label">
+              <input
+                class="delivery-popup__form-type-radio"
+                type="radio"
+                name="delivery-type"
+                value="courier"
+                checked
+              />
+              Курьером
+            </label>
+          </div>
+          <div class="delivery-popup__form-addresses">
+            <h3 class="delivery-popup__form-addresses-title">Мои адреса</h3>
+            <ul
+              class="delivery-popup__form-addresses-list delivery-popup__form-addresses-list--active"
+              id="delivery-address-courier"
+            >
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, улица Ахматбека Суюмбаева, 12/1"
+                  />
+                  Бишкек, улица Ахматбека Суюмбаева, 12/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, улица Жукеева-Пудовкина, 77/1"
+                  />
+                  Бишкек, улица Жукеева-Пудовкина, 77/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1"
+                  />
+                  Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <ul
+              class="delivery-popup__form-addresses-list delivery-popup__form-addresses-list--pick-up"
+              id="delivery-address-pick-up"
+            >
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1"
+                  />
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.55
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 60"
+                  />
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 60
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.99
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, улица Табышалиева, д. 57"
+                  />
+                  г. Бишкек, улица Табышалиева, д. 57
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.42
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button type="submit" class="delivery-popup__form-choose">
             Выбрать
           </button>
         </form>
