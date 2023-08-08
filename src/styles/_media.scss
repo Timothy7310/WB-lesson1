@@ -224,6 +224,7 @@
   .main {
     &__wrap {
       padding: 0px 0px 10px 0px;
+      row-gap: 10px;
     }
     &__card {
       padding: 16px 16px 24px 16px;
@@ -235,6 +236,7 @@
   }
   .basket {
     padding: 0px 16px;
+    margin-bottom: 22px;
     &-current {
       margin-bottom: 46px;
     }
@@ -297,6 +299,35 @@
       }
     }
   }
+  .delivery {
+    &__info {
+      margin: 8px 0px 19px 0px;
+      gap: 18px;
+    }
+    &__row {
+      grid-template-columns: 1fr;
+      &--date {
+        row-gap: 12px;
+      }
+    }
+    &__return {
+      padding: 0px 8px;
+      &-tooltip {
+        transform: translate(0%);
+        right: 20px;
+      }
+    }
+    &-popup__content {
+      height: 100vh;
+      max-width: 100vw;
+      border-radius: 0;
+      padding: 16px;
+    }
+    &-popup__form-choose {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
   .payment {
     &__info {
       margin: 8px 0px 8px 0px;
@@ -305,6 +336,7 @@
       height: 100vh;
       max-width: 100vw;
       border-radius: 0;
+      padding: 16px;
     }
   }
   .contacts {
