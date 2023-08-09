@@ -22,6 +22,9 @@ export const handleDelivery = () => {
   const orderDeliveryAddress = document.querySelector(
     "#order-delivery-address"
   );
+  const orderDeliveryAddressInput = document.querySelector(
+    'input[name="order-address"]'
+  );
 
   const deliveryTypeSelector = 'input[name="delivery-type"]';
   const deliveryAddressSelector = 'input[name="delivery-address"]';
@@ -57,6 +60,7 @@ export const handleDelivery = () => {
     e.preventDefault();
     deliveryAddress.textContent = address;
     orderDeliveryAddress.textContent = address;
+    orderDeliveryAddressInput.value = address;
     closeModal();
   });
 };

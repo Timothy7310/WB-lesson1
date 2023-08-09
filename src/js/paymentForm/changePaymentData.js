@@ -6,6 +6,9 @@ const orderPaymentCardNumber = document.querySelector(
   "#order-payment-card-number"
 );
 const orderPaymentCardType = document.querySelector("#order-payment-card-type");
+const orderPaymentCardNumberInput = document.querySelector(
+  'input[name="order-card-number"]'
+);
 
 export const changePaymentData = () => {
   const { cardNumber, cardType, cardIcon, cardMonth, cardYear } =
@@ -19,5 +22,6 @@ export const changePaymentData = () => {
 
   paymentCardNumber.textContent = cardNumber;
   orderPaymentCardNumber.textContent = cardNumber;
+  orderPaymentCardNumberInput.value = cardNumber;
   paymentCardDate.textContent = `${cardMonth}/${cardYear}`;
 };

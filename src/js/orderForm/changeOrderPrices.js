@@ -1,4 +1,5 @@
 import { getBasketItemByID } from "../../mocks/user";
+import { changeOrderPaymentType } from "./changeOrderPaymentType";
 
 export const changeOrderPrices = (checkedItems) => {
   const basketItems = Array.from(checkedItems)
@@ -12,6 +13,8 @@ export const changeOrderPrices = (checkedItems) => {
   );
   const totalPriceWithDiscountRoot =
     document.querySelector("#order-total-price");
+
+  const totalPriceInput = document.querySelector('input[name="order-price"]');
 
   let totalCount = 0;
   let totalPrice = 0;
@@ -45,4 +48,8 @@ export const changeOrderPrices = (checkedItems) => {
     totalDiscount
   ).toLocaleString()} сом`;
   totalPriceWithDiscountRoot.textContent = `${totalPriceWithDiscount.toLocaleString()} сом`;
+
+  totalPriceInput.value = totalPriceWithDiscount;
+
+  changeOrderPaymentType();
 };

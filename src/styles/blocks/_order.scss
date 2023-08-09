@@ -211,6 +211,9 @@
         font-size: 13px;
         font-weight: 400;
         line-height: 16px;
+        &--hide {
+          display: none;
+        }
       }
     }
   }
@@ -232,6 +235,10 @@
     transition: background-color var(--base-animation);
     &:hover {
       background-color: var(--bg-secondary);
+    }
+    &:disabled {
+      background-color: var(--color-secondary);
+      cursor: not-allowed;
     }
   }
   &__rules {
