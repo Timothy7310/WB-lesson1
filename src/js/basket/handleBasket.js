@@ -2,6 +2,7 @@ import { openCompanyTooltip } from "./openCompanyTooltip";
 import { openPricesTooltip } from "./openPricesTooltip";
 import { basketItems } from "../../mocks/user";
 import { createDeliveryInfo } from "../delivery/createDeliveryInfo";
+import { changeOrderPrices } from "../orderForm/changeOrderPrices";
 
 export const handleBasket = () => {
   const companyTooltipClass = ".basket__item-company-button";
@@ -9,6 +10,8 @@ export const handleBasket = () => {
   const basketCheckboxClass = ".basket__checkbox";
   const basketIncrementClass = ".basket__item-counter--inc";
   const basketDecrementClass = ".basket__item-counter--dec";
+  const basketItemsCheckedSelector =
+    'input[name="basket-item"].basket__checkbox--checked';
 
   const basketListCurrent = document.querySelector("#basket-list-current");
   const basketCheckboxAll = document.querySelector("#basket-checkbox-all");
@@ -52,9 +55,10 @@ export const handleBasket = () => {
       }
 
       const allCheckedItems = document.querySelectorAll(
-        'input[name="basket-item"].basket__checkbox--checked'
+        basketItemsCheckedSelector
       );
       createDeliveryInfo(allCheckedItems);
+      changeOrderPrices(allCheckedItems);
     }
 
     if (target.closest(basketIncrementClass)) {
@@ -63,6 +67,11 @@ export const handleBasket = () => {
       const [item] = basketItems.filter((x) => x.id === +id);
 
       item.class.incCount();
+
+      const allCheckedItems = document.querySelectorAll(
+        basketItemsCheckedSelector
+      );
+      changeOrderPrices(allCheckedItems);
     }
 
     if (target.closest(basketDecrementClass)) {
@@ -71,6 +80,11 @@ export const handleBasket = () => {
       const [item] = basketItems.filter((x) => x.id === +id);
 
       item.class.decCount();
+
+      const allCheckedItems = document.querySelectorAll(
+        basketItemsCheckedSelector
+      );
+      changeOrderPrices(allCheckedItems);
     }
   });
 
@@ -87,9 +101,10 @@ export const handleBasket = () => {
     });
 
     const allCheckedItems = document.querySelectorAll(
-      'input[name="basket-item"].basket__checkbox--checked'
+      basketItemsCheckedSelector
     );
     createDeliveryInfo(allCheckedItems);
+    changeOrderPrices(allCheckedItems);
   });
 
   basketAccordionCurrent.addEventListener("click", (e) => {
