@@ -131,6 +131,162 @@
                 ></ul>
               </div>
             </section>
+            <section class="order">
+              <form action="" class="order__form" id="order-form">
+                <div class="order__top">
+                  <h2 class="order__title">
+                    <span class="order__title-text">Итого</span>
+                    <span class="order__title-number" id="order-total-price">
+                      2 101 063 сом
+                    </span>
+                  </h2>
+                  <div class="order__prices">
+                    <div class="order__prices-row">
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-count"
+                      >
+                        203 товара
+                      </span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-price"
+                      >
+                        2 302 048 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Скидка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-discount"
+                      >
+                        −200 985 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Доставка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-delivery-price"
+                      >
+                        Бесплатно
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="order__delivery">
+                  <div class="order__delivery-top">
+                    <h3 class="order__delivery-title">
+                      Доставка в пункт выдачи
+                    </h3>
+                    <button
+                      class="order__delivery-button order__change-button"
+                      id="order-delivery-change"
+                    >
+                      <svg
+                        class="order__delivery-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <span
+                    class="order__delivery-address"
+                    id="order-delivery-address"
+                  >
+                    Бишкек, улица Ахматбека Суюмбаева, 12/1
+                  </span>
+                  <span class="order__delivery-date" id="order-delivery-date">
+                    5–8 фев
+                  </span>
+                  <div class="order__delivery-return">
+                    <img
+                      class="delivery__return-icon"
+                      src="src/assets/icons/price-shipping.svg"
+                      alt=""
+                    />
+                    <span class="order__delivery-return-text">
+                      Обратная доставка товаров на склад при отказе —
+                      <button
+                        class="order__delivery-return-button"
+                        id="order-delivery-tooltip"
+                      >
+                        бесплатно
+                      </button>
+                    </span>
+                    <div
+                      class="order__delivery-return-tooltip"
+                      id="order-delivery-window"
+                    >
+                      Если товары вам не подойдут, мы вернем их обратно на склад
+                      — это бесплатно
+                    </div>
+                  </div>
+                </div>
+                <div class="order__payment">
+                  <div class="order__payment-top">
+                    <h3 class="order__payment-title">Оплата картой</h3>
+                    <button
+                      class="order__payment-button order__change-button"
+                      id="order-payment-change"
+                    >
+                      <svg
+                        class="order__payment-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="order__payment-card">
+                    <div class="order__payment-card-icon-wrap">
+                      <img
+                        class="order__payment-card-icon"
+                        src="./mir.svg"
+                        alt="Мир"
+                      />
+                    </div>
+                    <span class="order__payment-card-number"
+                      >1234 12•• •••• 1234</span
+                    >
+                  </div>
+                  <div class="order__payment-type">
+                    <label class="order__payment-type-label">
+                      <input
+                        type="checkbox"
+                        class="order__payment-type-checkbox"
+                        name="order-payment-type"
+                        value="online"
+                      />
+                      Списать оплату сразу
+                    </label>
+                    <span class="order__payment-type-text">
+                      Спишем оплату с карты при получении
+                    </span>
+                  </div>
+                </div>
+                <div class="order__bottom">
+                  <button type="submit" class="order__submit" id="order-submit">
+                    Заказать
+                  </button>
+                  <div class="order__rules">
+                    <svg class="order__rules-icon">
+                      <use href="src/assets/icons/sprite.svg#checked"></use>
+                    </svg>
+                    <p class="order__rules-text">
+                      Соглашаюсь
+                      <span class="order__rules-text-important">
+                        с правилами пользования торговой площадкой
+                      </span>
+                      и
+                      <span class="order__rules-text-important">
+                        возврата
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </section>
             <section class="delivery main__card">
               <h2 class="delivery__title main__card-title">Способ доставки</h2>
               <button class="delivery__change" id="change-delivery-button">

@@ -12,7 +12,7 @@
       gap: 47px;
       &-head {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 48px;
       }
       &-bottom {
         grid-template-columns: 1fr;
@@ -23,6 +23,32 @@
   .main {
     &__wrap {
       grid-template-columns: 1fr;
+    }
+  }
+  .basket {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .delivery {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .payment {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .contacts {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .order {
+    grid-column: 1;
+    grid-row: 5;
+    &__form {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 0;
     }
   }
 }
@@ -213,7 +239,7 @@
         width: 100%;
         z-index: 101;
         & .header__search-input {
-          background-color: var(--bg-smoky);
+          background-color: var(--bg-main);
           color: var(--color-dark);
           padding: 0px 35px 0px 10px;
           font-size: 16px;
@@ -223,7 +249,7 @@
   }
   .main {
     &__wrap {
-      padding: 0px 0px 10px 0px;
+      padding: 0px 0px 15px 0px;
       row-gap: 10px;
     }
     &__card {
@@ -344,5 +370,53 @@
     &__title {
       margin-bottom: 26px;
     }
+  }
+  .order {
+    padding: 0px 16px;
+    margin-top: 13px;
+    &__form {
+      gap: 0;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      &-number {
+        letter-spacing: 0px;
+      }
+    }
+    &__top {
+      margin-bottom: 17px;
+    }
+    &__delivery {
+      margin-bottom: 7px;
+      &-top {
+        display: none;
+      }
+      &-address {
+        display: none;
+      }
+      &-date {
+        display: none;
+      }
+      &-return {
+        margin-top: 0;
+        background-color: var(--bg-main-dark);
+      }
+    }
+    &__payment {
+      margin-bottom: 25px;
+      &-top {
+        display: none;
+      }
+      &-card {
+        display: none;
+      }
+      &-type {
+        background-color: var(--bg-main-dark);
+      }
+    }
+  }
+  .footer {
+    padding: 48px 0px 22px 0px;
   }
 }

@@ -1,5 +1,6 @@
 :root {
   --color-dark: #000000;
+  --color-dark--rgb: 0, 0, 0;
   --color-white: #ffffff;
   --color-white--rgb: 255, 255, 255;
   --color-focus: #036fc7;
@@ -13,7 +14,7 @@
   --color-good: #0cb477;
   --color-good--rgb: 12, 180, 119;
   --bg-main: #f6f6fa;
+  --bg-main-dark: #f0ecf4;
   --bg-secondary: #6725a8;
-  --bg-smoky: #f6f6fa;
   --base-animation: 0.25s ease-in;
 }
