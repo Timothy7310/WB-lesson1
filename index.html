@@ -183,6 +183,8 @@
                     <button
                       class="order__delivery-button order__change-button"
                       id="order-delivery-change"
+                      type="button"
+                      aria-label="Изменить адресс доставки"
                     >
                       <svg
                         class="order__delivery-button-icon order__change-button-icon"
@@ -211,6 +213,7 @@
                       <button
                         class="order__delivery-return-button"
                         id="order-delivery-tooltip"
+                        type="button"
                       >
                         бесплатно
                       </button>
@@ -230,6 +233,8 @@
                     <button
                       class="order__payment-button order__change-button"
                       id="order-payment-change"
+                      type="button"
+                      aria-label="Изменить данные банковской карты"
                     >
                       <svg
                         class="order__payment-button-icon order__change-button-icon"
@@ -478,29 +483,31 @@
               <h2 class="contacts__title main__card-title">Получатель</h2>
               <form action="" class="contacts__form" id="contacts-form">
                 <div class="contacts__form-head">
-                  <div class="contacts__item contacts__item--warning">
+                  <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="text"
+                      name="contacts-name"
                       id="contacts-name"
                       placeholder=""
                     />
+                    <span class="contacts__item-warning">Укажите имя</span>
                     <label class="contacts__item-label" for="contacts-name">
                       Имя
                     </label>
-                    <span class="contacts__item-warning">Укажите имя</span>
                   </div>
                   <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="text"
-                      id="contacts-name"
+                      name="contacts-secondname"
+                      id="contacts-secondname"
                       placeholder=""
                     />
+                    <span class="contacts__item-warning">Укажите фамилию</span>
                     <label class="contacts__item-label" for="contacts-name">
                       Фамилия
                     </label>
-                    <span class="contacts__item-warning">Укажите фамилию</span>
                   </div>
                 </div>
                 <div class="contacts__form-bottom">
@@ -508,41 +515,57 @@
                     <input
                       class="contacts__item-input"
                       type="email"
-                      id="contacts-name"
+                      name="contacts-email"
+                      id="contacts-email"
                       placeholder=""
                     />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-email"
+                    >
+                      Укажите почту
+                    </span>
                     <label class="contacts__item-label" for="contacts-name">
                       Почта
                     </label>
-                    <span class="contacts__item-warning">Укажите почту</span>
                   </div>
                   <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="tel"
+                      name="contacts-phone"
                       id="contacts-phone"
                       maxlength="18"
                       placeholder=""
                     />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-phone"
+                    >
+                      Укажите телефон
+                    </span>
                     <label class="contacts__item-label" for="contacts-name">
                       Телефон
                     </label>
-                    <span class="contacts__item-warning">Укажите телефон</span>
                   </div>
                   <div class="contacts__item">
                     <input
-                      class="contacts__item-input"
+                      class="contacts__item-input contacts__item-input--tin"
                       type="tel"
-                      id="contacts-name"
+                      name="contacts-TIN"
+                      id="contacts-TIN"
                       placeholder=""
+                      maxlength="14"
                     />
-                    <label class="contacts__item-label" for="contacts-name">
-                      ИНН
-                    </label>
-                    <span class="contacts__item-warning">Укажите ИНН</span>
+                    <span class="contacts__item-warning" id="input-wraning-tin">
+                      Укажите ИНН
+                    </span>
                     <span class="contacts__item-info">
                       Для таможенного оформления
                     </span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      ИНН
+                    </label>
                   </div>
                 </div>
               </form>
