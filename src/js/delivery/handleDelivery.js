@@ -9,6 +9,9 @@ export const handleDelivery = () => {
   const changeDeliveryButton = document.querySelector(
     "#change-delivery-button"
   );
+  const orderChangeDeliveryButton = document.querySelector(
+    "#order-delivery-change"
+  );
   const deliveryPopupOverlay = document.querySelector(
     "#delivery-popup-overlay"
   );
@@ -16,6 +19,9 @@ export const handleDelivery = () => {
     "#delivery-popup-close"
   );
   const deliveryAddress = document.querySelector("#delivery-address");
+  const orderDeliveryAddress = document.querySelector(
+    "#order-delivery-address"
+  );
 
   const deliveryTypeSelector = 'input[name="delivery-type"]';
   const deliveryAddressSelector = 'input[name="delivery-address"]';
@@ -25,6 +31,7 @@ export const handleDelivery = () => {
     "";
 
   changeDeliveryButton.addEventListener("click", openModal);
+  orderChangeDeliveryButton.addEventListener("click", openModal);
 
   deliveryPopupOverlay.addEventListener("click", closeModal);
 
@@ -49,6 +56,7 @@ export const handleDelivery = () => {
   deliveryPopupForm.addEventListener("submit", (e) => {
     e.preventDefault();
     deliveryAddress.textContent = address;
+    orderDeliveryAddress.textContent = address;
     closeModal();
   });
 };
