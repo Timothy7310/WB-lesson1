@@ -7,6 +7,7 @@ export const changeOrderPrices = (checkedItems) => {
     .map((id) => getBasketItemByID(+id));
 
   const totalCountRoot = document.querySelector("#order-subinfo-total-count");
+  const totalCountRootHeader = document.querySelector("#header-basket-count");
   const totalPriceRoot = document.querySelector("#order-subinfo-total-price");
   const totalDiscountRoot = document.querySelector(
     "#order-subinfo-total-discount"
@@ -43,6 +44,7 @@ export const changeOrderPrices = (checkedItems) => {
   const suffix = suffixes.get(pr.select(totalCount));
 
   totalCountRoot.textContent = `${totalCount} ${suffix}`;
+  totalCountRootHeader.textContent = totalCount;
   totalPriceRoot.textContent = `${totalPrice.toLocaleString()} сом`;
   totalDiscountRoot.textContent = `${totalCount > 0 ? "−" : ""} ${Math.round(
     totalDiscount

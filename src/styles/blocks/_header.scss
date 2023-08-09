@@ -134,6 +134,7 @@
       align-items: center;
       gap: 6px;
       width: 100%;
+      position: relative;
       &-icon {
         width: 28px;
         height: 28px;
@@ -156,6 +157,23 @@
           color: var(--color-accent-secondary);
         }
       }
+    }
+    &-basket-count {
+      position: absolute;
+      top: -6px;
+      right: 4px;
+      background-color: var(--color-counter-left);
+      border-radius: 16px;
+      padding: 0px 2px;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 18px;
+      color: var(--color-white);
+      height: 16px;
+      min-width: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   &__overlay {
