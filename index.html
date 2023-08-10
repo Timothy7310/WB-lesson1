@@ -585,6 +585,57 @@
         </div>
         <div class="footer__bg"></div>
       </footer>
+      <div class="header-mob">
+        <ul class="header-mob__list">
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button"
+              aria-label="Главная страница"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#main"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Каталог">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#catalog"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button header-mob__item-button--active header-mob__item-button--basket"
+              aria-label="Корзина"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#basket"></use>
+              </svg>
+              <span
+                class="header__navigation-basket-count"
+                id="header-mob-basket-count"
+              >
+                3
+              </span>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Избранное">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#favorites-header"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Профиль">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#profile"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="payment-popup" id="payment-popup">
       <div class="payment-popup__overlay" id="payment-popup-overlay"></div>
