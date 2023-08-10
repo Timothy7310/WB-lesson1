@@ -1,6 +1,7 @@
 import { getBasketItemByID } from "../../mocks/user";
 import { createDeliveryItems } from "./createDeliveryItems";
 import { getTimeDelivery } from "./getTimeDelivery";
+import { changeOrderDeliveryDate } from "./changeOrderDeliveryDate";
 
 export const createDeliveryInfo = (checkedItems) => {
   const root = document.querySelector("#delivery-items");
@@ -61,4 +62,6 @@ export const createDeliveryInfo = (checkedItems) => {
       root.appendChild(element);
     }
   });
+
+  changeOrderDeliveryDate(basketItems);
 };

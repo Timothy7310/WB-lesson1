@@ -71,6 +71,12 @@
                       <use href="src/assets/icons/sprite.svg#basket"></use>
                     </svg>
                     <span class="header__navigation-link-text">Корзина</span>
+                    <span
+                      class="header__navigation-basket-count"
+                      id="header-basket-count"
+                    >
+                      3
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -130,6 +136,171 @@
                   id="basket-list-missing"
                 ></ul>
               </div>
+            </section>
+            <section class="order">
+              <form action="" class="order__form" id="order-form">
+                <div class="order__top">
+                  <h2 class="order__title">
+                    <span class="order__title-text">Итого</span>
+                    <span class="order__title-number" id="order-total-price">
+                      2 101 063 сом
+                    </span>
+                  </h2>
+                  <div class="order__prices">
+                    <div class="order__prices-row">
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-count"
+                      >
+                        203 товара
+                      </span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-price"
+                      >
+                        2 302 048 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Скидка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-discount"
+                      >
+                        −200 985 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Доставка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-delivery-price"
+                      >
+                        Бесплатно
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="order__delivery">
+                  <div class="order__delivery-top">
+                    <h3 class="order__delivery-title">
+                      Доставка в пункт выдачи
+                    </h3>
+                    <button
+                      class="order__delivery-button order__change-button"
+                      id="order-delivery-change"
+                      type="button"
+                      aria-label="Изменить адресс доставки"
+                    >
+                      <svg
+                        class="order__delivery-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <span
+                    class="order__delivery-address"
+                    id="order-delivery-address"
+                  >
+                    Бишкек, улица Ахматбека Суюмбаева, 12/1
+                  </span>
+                  <span class="order__delivery-date" id="order-delivery-date">
+                    5–8 фев
+                  </span>
+                  <div class="order__delivery-return">
+                    <img
+                      class="delivery__return-icon"
+                      src="src/assets/icons/price-shipping.svg"
+                      alt=""
+                    />
+                    <span class="order__delivery-return-text">
+                      Обратная доставка товаров на склад при отказе —
+                      <button
+                        class="order__delivery-return-button"
+                        id="order-delivery-tooltip"
+                        type="button"
+                      >
+                        бесплатно
+                      </button>
+                    </span>
+                    <div
+                      class="order__delivery-return-tooltip"
+                      id="order-delivery-window"
+                    >
+                      Если товары вам не подойдут, мы вернем их обратно на склад
+                      — это бесплатно
+                    </div>
+                  </div>
+                </div>
+                <div class="order__payment">
+                  <div class="order__payment-top">
+                    <h3 class="order__payment-title">Оплата картой</h3>
+                    <button
+                      class="order__payment-button order__change-button"
+                      id="order-payment-change"
+                      type="button"
+                      aria-label="Изменить данные банковской карты"
+                    >
+                      <svg
+                        class="order__payment-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="order__payment-card">
+                    <div class="order__payment-card-icon-wrap">
+                      <img
+                        class="order__payment-card-icon"
+                        id="order-payment-card-type"
+                        src="./mir.svg"
+                        alt="Мир"
+                      />
+                    </div>
+                    <span
+                      class="order__payment-card-number"
+                      id="order-payment-card-number"
+                    >
+                      1234 12•• •••• 1234
+                    </span>
+                  </div>
+                  <div class="order__payment-type">
+                    <label class="order__payment-type-label">
+                      <input
+                        type="checkbox"
+                        class="order__payment-type-checkbox"
+                        name="order-payment-type"
+                        value="online"
+                      />
+                      Списать оплату сразу
+                    </label>
+                    <span class="order__payment-type-text">
+                      Спишем оплату с карты при получении
+                    </span>
+                  </div>
+                </div>
+                <div class="order__bottom">
+                  <button type="submit" class="order__submit" id="order-submit">
+                    Заказать
+                  </button>
+                  <div class="order__rules">
+                    <svg class="order__rules-icon">
+                      <use href="src/assets/icons/sprite.svg#checked"></use>
+                    </svg>
+                    <p class="order__rules-text">
+                      Соглашаюсь
+                      <span class="order__rules-text-important">
+                        с правилами пользования торговой площадкой
+                      </span>
+                      и
+                      <span class="order__rules-text-important">
+                        возврата
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </form>
             </section>
             <section class="delivery main__card">
               <h2 class="delivery__title main__card-title">Способ доставки</h2>
@@ -258,6 +429,10 @@
                   alt=""
                 />
                 <div class="delivery__return-text-wrap">
+                  <input type="hidden" name="order-price" />
+                  <input type="hidden" name="order-address" />
+                  <input type="hidden" name="order-card-number" />
+                  <input type="hidden" name="order-payment" value="offline" />
                   <span class="delivery__return-text">
                     Обратная доставка товаров на склад при отказе —
                     <button
@@ -314,29 +489,31 @@
               <h2 class="contacts__title main__card-title">Получатель</h2>
               <form action="" class="contacts__form" id="contacts-form">
                 <div class="contacts__form-head">
-                  <div class="contacts__item contacts__item--warning">
+                  <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="text"
+                      name="contacts-name"
                       id="contacts-name"
                       placeholder=""
                     />
+                    <span class="contacts__item-warning">Укажите имя</span>
                     <label class="contacts__item-label" for="contacts-name">
                       Имя
                     </label>
-                    <span class="contacts__item-warning">Укажите имя</span>
                   </div>
                   <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="text"
-                      id="contacts-name"
+                      name="contacts-secondname"
+                      id="contacts-secondname"
                       placeholder=""
                     />
+                    <span class="contacts__item-warning">Укажите фамилию</span>
                     <label class="contacts__item-label" for="contacts-name">
                       Фамилия
                     </label>
-                    <span class="contacts__item-warning">Укажите фамилию</span>
                   </div>
                 </div>
                 <div class="contacts__form-bottom">
@@ -344,41 +521,57 @@
                     <input
                       class="contacts__item-input"
                       type="email"
-                      id="contacts-name"
+                      name="contacts-email"
+                      id="contacts-email"
                       placeholder=""
                     />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-email"
+                    >
+                      Укажите почту
+                    </span>
                     <label class="contacts__item-label" for="contacts-name">
                       Почта
                     </label>
-                    <span class="contacts__item-warning">Укажите почту</span>
                   </div>
                   <div class="contacts__item">
                     <input
                       class="contacts__item-input"
                       type="tel"
+                      name="contacts-phone"
                       id="contacts-phone"
                       maxlength="18"
                       placeholder=""
                     />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-phone"
+                    >
+                      Укажите телефон
+                    </span>
                     <label class="contacts__item-label" for="contacts-name">
                       Телефон
                     </label>
-                    <span class="contacts__item-warning">Укажите телефон</span>
                   </div>
                   <div class="contacts__item">
                     <input
-                      class="contacts__item-input"
+                      class="contacts__item-input contacts__item-input--tin"
                       type="tel"
-                      id="contacts-name"
+                      name="contacts-TIN"
+                      id="contacts-TIN"
                       placeholder=""
+                      maxlength="14"
                     />
-                    <label class="contacts__item-label" for="contacts-name">
-                      ИНН
-                    </label>
-                    <span class="contacts__item-warning">Укажите ИНН</span>
+                    <span class="contacts__item-warning" id="input-wraning-tin">
+                      Укажите ИНН
+                    </span>
                     <span class="contacts__item-info">
                       Для таможенного оформления
                     </span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      ИНН
+                    </label>
                   </div>
                 </div>
               </form>
@@ -392,6 +585,57 @@
         </div>
         <div class="footer__bg"></div>
       </footer>
+      <div class="header-mob">
+        <ul class="header-mob__list">
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button"
+              aria-label="Главная страница"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#main"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Каталог">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#catalog"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button header-mob__item-button--active header-mob__item-button--basket"
+              aria-label="Корзина"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#basket"></use>
+              </svg>
+              <span
+                class="header__navigation-basket-count"
+                id="header-mob-basket-count"
+              >
+                3
+              </span>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Избранное">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#favorites-header"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Профиль">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#profile"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="payment-popup" id="payment-popup">
       <div class="payment-popup__overlay" id="payment-popup-overlay"></div>

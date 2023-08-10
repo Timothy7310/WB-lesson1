@@ -12,7 +12,7 @@
       gap: 47px;
       &-head {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 48px;
       }
       &-bottom {
         grid-template-columns: 1fr;
@@ -25,6 +25,32 @@
       grid-template-columns: 1fr;
     }
   }
+  .basket {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .delivery {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .payment {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .contacts {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  .order {
+    grid-column: 1;
+    grid-row: 5;
+    &__form {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin-top: 0;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -34,6 +60,9 @@
     }
     &__navigation {
       display: none;
+    }
+    &-mob {
+      display: block;
     }
   }
 
@@ -123,6 +152,9 @@
           font-size: 14px;
           line-height: 20px;
         }
+        &-left {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -136,7 +168,7 @@
     }
   }
   .header {
-    padding: 14px 0px 43px 0px;
+    padding: 14px 0px 39px 0px;
     &__wrap {
       grid-template-columns: 23px max-content 25px;
       justify-content: space-between;
@@ -148,6 +180,7 @@
       border: none;
       padding: 0;
       gap: 7px;
+      margin-top: 4px;
       &-line {
         height: 2px;
       }
@@ -213,7 +246,7 @@
         width: 100%;
         z-index: 101;
         & .header__search-input {
-          background-color: var(--bg-smoky);
+          background-color: var(--bg-main);
           color: var(--color-dark);
           padding: 0px 35px 0px 10px;
           font-size: 16px;
@@ -223,11 +256,11 @@
   }
   .main {
     &__wrap {
-      padding: 0px 0px 10px 0px;
+      padding: 0px 0px 15px 0px;
       row-gap: 10px;
     }
     &__card {
-      padding: 16px 16px 24px 16px;
+      padding: 17px 16px 24px 16px;
       &-title {
         font-size: 20px;
         line-height: 28px;
@@ -279,8 +312,9 @@
         letter-spacing: 0px;
       }
       &-price-old {
-        letter-spacing: -1px;
+        letter-spacing: 0px;
         align-self: center;
+        margin-top: 3px;
       }
       &-text-wrap {
         margin-top: 4px;
@@ -301,8 +335,8 @@
   }
   .delivery {
     &__info {
-      margin: 8px 0px 19px 0px;
-      gap: 18px;
+      margin: 10px 0px 19px 0px;
+      gap: 17px;
     }
     &__row {
       grid-template-columns: 1fr;
@@ -342,7 +376,55 @@
   .contacts {
     padding-bottom: 40px;
     &__title {
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
+  }
+  .order {
+    padding: 0px 16px;
+    margin-top: 13px;
+    &__form {
+      gap: 0;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      &-number {
+        letter-spacing: 0px;
+      }
+    }
+    &__top {
+      margin-bottom: 17px;
+    }
+    &__delivery {
+      margin-bottom: 7px;
+      &-top {
+        display: none;
+      }
+      &-address {
+        display: none;
+      }
+      &-date {
+        display: none;
+      }
+      &-return {
+        margin-top: 0;
+        background-color: var(--bg-main-dark);
+      }
+    }
+    &__payment {
+      margin-bottom: 25px;
+      &-top {
+        display: none;
+      }
+      &-card {
+        display: none;
+      }
+      &-type {
+        background-color: var(--bg-main-dark);
+      }
+    }
+  }
+  .footer {
+    padding: 48px 0px 20px 0px;
   }
 }
