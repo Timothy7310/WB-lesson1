@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары и точка</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrap">
+            <button class="header__burger">
+              <span class="header__burger-line"></span>
+              <span class="header__burger-line"></span>
+              <span class="header__burger-line"></span>
+            </button>
+            <a href="#" class="header__logo">
+              <h1 class="header__logo-title">
+                товары <br class="header__logo--br" />
+                и <span class="header__logo-title--span">точка</span>
+              </h1>
+            </a>
+            <form action="" class="header__search">
+              <input
+                class="header__search-input"
+                type="text"
+                placeholder="Я ищу..."
+              />
+              <input type="submit" hidden />
+              <button
+                class="header__search-button"
+                type="submit"
+                aria-label="Поиск"
+              >
+                <svg class="header__search-button-icon">
+                  <use href="src/assets/icons/sprite.svg#search"></use>
+                </svg>
+              </button>
+              <button
+                class="header__search-button header__search-button--open"
+                type="button"
+                aria-label="Открыть поиск"
+              >
+                <svg class="header__search-button-icon">
+                  <use href="src/assets/icons/sprite.svg#search"></use>
+                </svg>
+              </button>
+            </form>
+            <nav class="header__navigation">
+              <ul class="header__navigation-list">
+                <li class="header__navigation-item">
+                  <a href="#" class="header__navigation-link">
+                    <svg class="header__navigation-link-icon">
+                      <use href="src/assets/icons/sprite.svg#profile"></use>
+                    </svg>
+                    <span class="header__navigation-link-text">Профиль</span>
+                  </a>
+                </li>
+                <li class="header__navigation-item">
+                  <a href="#" class="header__navigation-link">
+                    <svg class="header__navigation-link-icon">
+                      <use href="src/assets/icons/sprite.svg#basket"></use>
+                    </svg>
+                    <span class="header__navigation-link-text">Корзина</span>
+                    <span
+                      class="header__navigation-basket-count"
+                      id="header-basket-count"
+                    >
+                      3
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header__overlay"></div>
+        <div class="header__bg"></div>
+      </header>
+      <main class="main">
+        <div class="container container__main">
+          <div class="main__wrap">
+            <section class="basket">
+              <h2 class="basket__title container__main-title">Корзина</h2>
+              <div class="basket-current">
+                <div class="basket-current__top">
+                  <label class="basket__checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="basket-items"
+                      class="basket__checkbox"
+                      id="basket-checkbox-all"
+                    />
+                    Выбрать все
+                  </label>
+                  <button
+                    class="basket__accordion-button basket__accordion-button--open"
+                    id="accordion-current"
+                  >
+                    <svg class="basket__accordion-button-icon">
+                      <use href="src/assets/icons/sprite.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul
+                  class="basket__list basket__list--current"
+                  id="basket-list-current"
+                ></ul>
+              </div>
+
+              <div class="basket-missing">
+                <div class="basket-missing__top">
+                  <h3 class="basket-missing__title">Отсутствуют · 3 товара</h3>
+                  <button
+                    class="basket__accordion-button basket__accordion-button--open"
+                    id="accordion-missing"
+                  >
+                    <svg class="basket__accordion-button-icon">
+                      <use href="src/assets/icons/sprite.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <ul
+                  class="basket__list basket__list--missing"
+                  id="basket-list-missing"
+                ></ul>
+              </div>
+            </section>
+            <section class="order">
+              <form action="" class="order__form" id="order-form">
+                <div class="order__top">
+                  <h2 class="order__title">
+                    <span class="order__title-text">Итого</span>
+                    <span class="order__title-number" id="order-total-price">
+                      2 101 063 сом
+                    </span>
+                  </h2>
+                  <div class="order__prices">
+                    <div class="order__prices-row">
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-count"
+                      >
+                        203 товара
+                      </span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-price"
+                      >
+                        2 302 048 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Скидка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-total-discount"
+                      >
+                        −200 985 сом
+                      </span>
+                    </div>
+                    <div class="order__prices-row">
+                      <span class="order__prices-row-text">Доставка</span>
+                      <span
+                        class="order__prices-row-text"
+                        id="order-subinfo-delivery-price"
+                      >
+                        Бесплатно
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="order__delivery">
+                  <div class="order__delivery-top">
+                    <h3 class="order__delivery-title">
+                      Доставка в пункт выдачи
+                    </h3>
+                    <button
+                      class="order__delivery-button order__change-button"
+                      id="order-delivery-change"
+                      type="button"
+                      aria-label="Изменить адресс доставки"
+                    >
+                      <svg
+                        class="order__delivery-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <span
+                    class="order__delivery-address"
+                    id="order-delivery-address"
+                  >
+                    Бишкек, улица Ахматбека Суюмбаева, 12/1
+                  </span>
+                  <span class="order__delivery-date" id="order-delivery-date">
+                    5–8 фев
+                  </span>
+                  <div class="order__delivery-return">
+                    <img
+                      class="delivery__return-icon"
+                      src="src/assets/icons/price-shipping.svg"
+                      alt=""
+                    />
+                    <span class="order__delivery-return-text">
+                      Обратная доставка товаров на склад при отказе —
+                      <button
+                        class="order__delivery-return-button"
+                        id="order-delivery-tooltip"
+                        type="button"
+                      >
+                        бесплатно
+                      </button>
+                    </span>
+                    <div
+                      class="order__delivery-return-tooltip"
+                      id="order-delivery-window"
+                    >
+                      Если товары вам не подойдут, мы вернем их обратно на склад
+                      — это бесплатно
+                    </div>
+                  </div>
+                </div>
+                <div class="order__payment">
+                  <div class="order__payment-top">
+                    <h3 class="order__payment-title">Оплата картой</h3>
+                    <button
+                      class="order__payment-button order__change-button"
+                      id="order-payment-change"
+                      type="button"
+                      aria-label="Изменить данные банковской карты"
+                    >
+                      <svg
+                        class="order__payment-button-icon order__change-button-icon"
+                      >
+                        <use href="src/assets/icons/sprite.svg#pen"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="order__payment-card">
+                    <div class="order__payment-card-icon-wrap">
+                      <img
+                        class="order__payment-card-icon"
+                        id="order-payment-card-type"
+                        src="./mir.svg"
+                        alt="Мир"
+                      />
+                    </div>
+                    <span
+                      class="order__payment-card-number"
+                      id="order-payment-card-number"
+                    >
+                      1234 12•• •••• 1234
+                    </span>
+                  </div>
+                  <div class="order__payment-type">
+                    <label class="order__payment-type-label">
+                      <input
+                        type="checkbox"
+                        class="order__payment-type-checkbox"
+                        name="order-payment-type"
+                        value="online"
+                      />
+                      Списать оплату сразу
+                    </label>
+                    <span class="order__payment-type-text">
+                      Спишем оплату с карты при получении
+                    </span>
+                  </div>
+                </div>
+                <div class="order__bottom">
+                  <button type="submit" class="order__submit" id="order-submit">
+                    Заказать
+                  </button>
+                  <div class="order__rules">
+                    <svg class="order__rules-icon">
+                      <use href="src/assets/icons/sprite.svg#checked"></use>
+                    </svg>
+                    <p class="order__rules-text">
+                      Соглашаюсь
+                      <span class="order__rules-text-important">
+                        с правилами пользования торговой площадкой
+                      </span>
+                      и
+                      <span class="order__rules-text-important">
+                        возврата
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="delivery main__card">
+              <h2 class="delivery__title main__card-title">Способ доставки</h2>
+              <button class="delivery__change" id="change-delivery-button">
+                Изменить
+              </button>
+              <div class="delivery__info">
+                <div class="delivery__row">
+                  <span class="delivery__row-name">Пункт выдачи</span>
+                  <div class="delivery__address-wrap">
+                    <span class="delivery__address" id="delivery-address">
+                      Бишкек, улица Ахматбека Суюмбаева, 12/1
+                    </span>
+                    <div class="delivery__address-info">
+                      <div class="delivery__address-rating">
+                        <svg class="delivery__address-rating-icon">
+                          <use href="src/assets/icons/sprite.svg#stars"></use>
+                        </svg>
+                        <span class="delivery__address-rating-num">4.99</span>
+                      </div>
+                      <span class="delivery__address-time">
+                        Ежедневно с 10 до 21
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="delivery__row">
+                  <span class="delivery__row-name">Стоимость доставки</span>
+                  <span class="delivery__price">Бесплатно</span>
+                </div>
+                <div class="delivery__items" id="delivery-items">
+                  <div class="delivery__row delivery__row--date">
+                    <span class="delivery__row-name delivery__date">
+                      5—6 февраля
+                    </span>
+                    <div class="delivery__date-items">
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/shirt@1x.webp 1x,
+                              src/assets/images/shirt@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Футболка UZcotton мужская"
+                            src="src/assets/images/shirt@1x.jpg"
+                            srcset="src/assets/images/shirt@2x.jpg 2x"
+                          />
+                        </picture>
+                      </div>
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/phone@1x.webp 1x,
+                              src/assets/images/phone@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe"
+                            src="src/assets/images/phone@1x.jpg"
+                            srcset="src/assets/images/phone@2x.jpg 2x"
+                          />
+                        </picture>
+
+                        <span class="delivery__date-item-count">184</span>
+                      </div>
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/pencils@1x.webp 1x,
+                              src/assets/images/pencils@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt='Карандаши
+                            цветные Faber-Castell "Замок", набор 24 цвета,
+                            заточенные, шестигранные, Faber‑Castell'
+                            src="src/assets/images/pencils@1x.jpg"
+                            srcset="src/assets/images/pencils@2x.jpg 2x"
+                          />
+                        </picture>
+                        <span class="delivery__date-item-count">2</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="delivery__row delivery__row--date">
+                    <span class="delivery__row-name delivery__date">
+                      7—8 февраля
+                    </span>
+                    <div class="delivery__date-items">
+                      <div class="delivery__date-item">
+                        <picture>
+                          <source
+                            srcset="
+                              src/assets/images/phone@1x.webp 1x,
+                              src/assets/images/phone@2x.webp 2x
+                            "
+                            type="image/webp"
+                          />
+                          <img
+                            class="delivery__date-item-img"
+                            alt="Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe"
+                            src="src/assets/images/phone@1x.jpg"
+                            srcset="src/assets/images/phone@2x.jpg 2x"
+                          />
+                        </picture>
+                        <span class="delivery__date-item-count">16</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="delivery__return">
+                <img
+                  class="delivery__return-icon"
+                  src="src/assets/icons/price-shipping.svg"
+                  alt=""
+                />
+                <div class="delivery__return-text-wrap">
+                  <input type="hidden" name="order-price" />
+                  <input type="hidden" name="order-address" />
+                  <input type="hidden" name="order-card-number" />
+                  <input type="hidden" name="order-payment" value="offline" />
+                  <span class="delivery__return-text">
+                    Обратная доставка товаров на склад при отказе —
+                    <button
+                      class="delivery__return-button"
+                      id="delivery-tooltip"
+                    >
+                      бесплатно
+                    </button>
+                  </span>
+                  <div
+                    class="delivery__return-tooltip"
+                    id="delivery-tooltip-window"
+                  >
+                    Если товары вам не подойдут, мы вернем их обратно на склад —
+                    это бесплатно
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="payment main__card">
+              <h2 class="payment__title main__card-title">Способ оплаты</h2>
+              <button class="payment__change" id="change-payment-button">
+                Изменить
+              </button>
+              <div class="payment__info">
+                <div class="payment__info-type">
+                  <img
+                    class="payment__info-type-icon"
+                    id="payment-card-type"
+                    src="mir.svg"
+                    alt="Мир"
+                  />
+                </div>
+                <div class="payment__info-card">
+                  <span
+                    class="payment__info-card-number payment__info-card-value"
+                    id="payment-card-number"
+                  >
+                    1234 56•• •••• 1234
+                  </span>
+                  <span
+                    class="payment__info-card-date payment__info-card-value"
+                    id="payment-card-date"
+                  >
+                    01/30
+                  </span>
+                </div>
+              </div>
+              <span class="payment__text">
+                Спишем оплату с карты при получении
+              </span>
+            </section>
+            <section class="contacts main__card">
+              <h2 class="contacts__title main__card-title">Получатель</h2>
+              <form action="" class="contacts__form" id="contacts-form">
+                <div class="contacts__form-head">
+                  <div class="contacts__item">
+                    <input
+                      class="contacts__item-input"
+                      type="text"
+                      name="contacts-name"
+                      id="contacts-name"
+                      placeholder=""
+                    />
+                    <span class="contacts__item-warning">Укажите имя</span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      Имя
+                    </label>
+                  </div>
+                  <div class="contacts__item">
+                    <input
+                      class="contacts__item-input"
+                      type="text"
+                      name="contacts-secondname"
+                      id="contacts-secondname"
+                      placeholder=""
+                    />
+                    <span class="contacts__item-warning">Укажите фамилию</span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      Фамилия
+                    </label>
+                  </div>
+                </div>
+                <div class="contacts__form-bottom">
+                  <div class="contacts__item">
+                    <input
+                      class="contacts__item-input"
+                      type="email"
+                      name="contacts-email"
+                      id="contacts-email"
+                      placeholder=""
+                    />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-email"
+                    >
+                      Укажите почту
+                    </span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      Почта
+                    </label>
+                  </div>
+                  <div class="contacts__item">
+                    <input
+                      class="contacts__item-input"
+                      type="tel"
+                      name="contacts-phone"
+                      id="contacts-phone"
+                      maxlength="18"
+                      placeholder=""
+                    />
+                    <span
+                      class="contacts__item-warning"
+                      id="input-wraning-phone"
+                    >
+                      Укажите телефон
+                    </span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      Телефон
+                    </label>
+                  </div>
+                  <div class="contacts__item">
+                    <input
+                      class="contacts__item-input contacts__item-input--tin"
+                      type="tel"
+                      name="contacts-TIN"
+                      id="contacts-TIN"
+                      placeholder=""
+                      maxlength="14"
+                    />
+                    <span class="contacts__item-warning" id="input-wraning-tin">
+                      Укажите ИНН
+                    </span>
+                    <span class="contacts__item-info">
+                      Для таможенного оформления
+                    </span>
+                    <label class="contacts__item-label" for="contacts-name">
+                      ИНН
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <span class="footer__info">© 2022 ООО «Товары и точка»</span>
+        </div>
+        <div class="footer__bg"></div>
+      </footer>
+      <div class="header-mob">
+        <ul class="header-mob__list">
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button"
+              aria-label="Главная страница"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#main"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Каталог">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#catalog"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button
+              class="header-mob__item-button header-mob__item-button--active header-mob__item-button--basket"
+              aria-label="Корзина"
+            >
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#basket"></use>
+              </svg>
+              <span
+                class="header__navigation-basket-count"
+                id="header-mob-basket-count"
+              >
+                3
+              </span>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Избранное">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#favorites-header"></use>
+              </svg>
+            </button>
+          </li>
+          <li class="header-mob__item">
+            <button class="header-mob__item-button" aria-label="Профиль">
+              <svg class="header-mob__item-button-icon">
+                <use href="src/assets/icons/sprite.svg#profile"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="payment-popup" id="payment-popup">
+      <div class="payment-popup__overlay" id="payment-popup-overlay"></div>
+      <div class="payment-popup__content">
+        <h2 class="payment-popup__content-title">Способ оплаты</h2>
+        <button
+          class="payment-popup__content-close"
+          id="payment-popup-close"
+          aria-label="Закрыть"
+        >
+          <svg class="payment-popup__content-close-icon">
+            <use href="src/assets/icons/sprite.svg#close-form"></use>
+          </svg>
+        </button>
+        <form class="payment-popup__form" id="payment-form" action="">
+          <ul class="payment-popup__form-list">
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="1234 56•• •••• 1234"
+                  data-card-type="Мир"
+                  data-card-icon="mir.svg"
+                  data-card-month="01"
+                  data-card-year="30"
+                  checked
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="mir.svg"
+                    class="payment-popup__type-icon"
+                    alt="Мир"
+                  />
+                </div>
+                <span class="payment-popup__number">1234 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="4444 56•• •••• 1234"
+                  data-card-type="Visa"
+                  data-card-icon="visa.svg"
+                  data-card-month="03"
+                  data-card-year="28"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="visa.svg"
+                    class="payment-popup__type-icon"
+                    alt="Visa"
+                  />
+                </div>
+                <span class="payment-popup__number">4444 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="3333 56•• •••• 1234"
+                  data-card-type="Mastercard"
+                  data-card-icon="mastercard.svg"
+                  data-card-month="05"
+                  data-card-year="27"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="mastercard.svg"
+                    class="payment-popup__type-icon"
+                    alt="Mastercard"
+                  />
+                </div>
+                <span class="payment-popup__number">3333 56•• •••• 1234</span>
+              </label>
+            </li>
+            <li class="payment-popup__form-item">
+              <label class="payment-popup__label">
+                <input
+                  class="payment-popup__radio"
+                  name="payment-method"
+                  type="radio"
+                  data-card-number="2222 56•• •••• 1234"
+                  data-card-type="Maestro"
+                  data-card-icon="maestro.svg"
+                  data-card-month="06"
+                  data-card-year="32"
+                />
+                <div class="payment-popup__type">
+                  <img
+                    src="maestro.svg"
+                    class="payment-popup__type-icon"
+                    alt="Maestro"
+                  />
+                </div>
+                <span class="payment-popup__number">2222 56•• •••• 1234</span>
+              </label>
+            </li>
+          </ul>
+          <button class="payment-popup__content-choose" type="submit">
+            Выбрать
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="delivery-popup" id="delivery-popup">
+      <div class="delivery-popup__overlay" id="delivery-popup-overlay"></div>
+      <div class="delivery-popup__content">
+        <h2 class="delivery-popup__content-title">Способ доставки</h2>
+        <button
+          class="delivery-popup__content-close"
+          id="delivery-popup-close"
+          aria-label="Закрыть"
+        >
+          <svg class="delivery-popup__content-close-icon">
+            <use href="src/assets/icons/sprite.svg#close-form"></use>
+          </svg>
+        </button>
+        <form action="" class="delivery-popup__form" id="delivery-popup-form">
+          <div class="delivery-popup__form-type">
+            <label class="delivery-popup__form-type-label">
+              <input
+                class="delivery-popup__form-type-radio"
+                type="radio"
+                name="delivery-type"
+                value="pick-up"
+              />
+              В пункт выдачи
+            </label>
+            <label class="delivery-popup__form-type-label">
+              <input
+                class="delivery-popup__form-type-radio"
+                type="radio"
+                name="delivery-type"
+                value="courier"
+                checked
+              />
+              Курьером
+            </label>
+          </div>
+          <div class="delivery-popup__form-addresses">
+            <h3 class="delivery-popup__form-addresses-title">Мои адреса</h3>
+            <ul
+              class="delivery-popup__form-addresses-list delivery-popup__form-addresses-list--active"
+              id="delivery-address-courier"
+            >
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, улица Ахматбека Суюмбаева, 12/1"
+                  />
+                  Бишкек, улица Ахматбека Суюмбаева, 12/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, улица Жукеева-Пудовкина, 77/1"
+                  />
+                  Бишкек, улица Жукеева-Пудовкина, 77/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1"
+                  />
+                  Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <ul
+              class="delivery-popup__form-addresses-list delivery-popup__form-addresses-list--pick-up"
+              id="delivery-address-pick-up"
+            >
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1"
+                  />
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.55
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 60"
+                  />
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 60
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.99
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+
+              <li class="delivery-popup__form-addresses-item">
+                <label class="delivery-popup__form-addresses-label">
+                  <input
+                    class="delivery-popup__form-addresses-radio"
+                    type="radio"
+                    name="delivery-address"
+                    value="г. Бишкек, улица Табышалиева, д. 57"
+                  />
+                  г. Бишкек, улица Табышалиева, д. 57
+                </label>
+                <button class="delivery-popup__form-addresses-delete">
+                  <svg class="delivery-popup__form-addresses-delete-icon">
+                    <use href="src/assets/icons/sprite.svg#delete"></use>
+                  </svg>
+                </button>
+                <div class="delivery-popup__form-addresses-rating">
+                  <svg class="delivery-popup__form-addresses-rating-stars">
+                    <use href="src/assets/icons/sprite.svg#stars"></use>
+                  </svg>
+                  <span class="delivery-popup__form-addresses-rating-number">
+                    4.42
+                  </span>
+                  <span class="delivery-popup__form-addresses-rating-subinfo">
+                    Пункт выдачи
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button type="submit" class="delivery-popup__form-choose">
+            Выбрать
+          </button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
