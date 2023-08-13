@@ -14,6 +14,10 @@ export class BasketItem {
     return (discount / 100) * sum;
   };
 
+  getClassForBigNumbers(number) {
+    return number >= 1_000_000 ? "basket__item--price-big" : "";
+  }
+
   incCount() {
     const root = document.querySelector(this.rootItemSelector);
     const incButton = root.querySelector(".basket__item-counter--inc");
@@ -183,7 +187,13 @@ export class BasketItem {
         </div>
         <div class="basket__item-prices">
         
-            <span class="basket__item-price-new">
+            <span class="basket__item-price-new ${this.getClassForBigNumbers(
+              this.getTotalPrice() -
+                this.getDiscountSum(
+                  this.data.discount + this.userDiscount,
+                  this.getTotalPrice()
+                )
+            )}">
                 ${Math.round(
                   this.getTotalPrice() -
                     this.getDiscountSum(
@@ -246,7 +256,13 @@ export class BasketItem {
     const pricesRoot = root.querySelector(".basket__item-prices");
 
     pricesRoot.innerHTML = `
-        <span class="basket__item-price-new">
+        <span class="basket__item-price-new ${this.getClassForBigNumbers(
+          this.getTotalPrice() -
+            this.getDiscountSum(
+              this.data.discount + this.userDiscount,
+              this.getTotalPrice()
+            )
+        )}">
             ${Math.round(
               this.getTotalPrice() -
                 this.getDiscountSum(

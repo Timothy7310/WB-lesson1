@@ -94,7 +94,7 @@ export const userData = {
         webpLarge: phoneWebpLarge,
       },
       price: 11500,
-      discount: 55,
+      discount: 20,
       total: 230,
       shipping: [
         {
